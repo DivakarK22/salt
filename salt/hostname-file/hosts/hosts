@@ -1,0 +1,14 @@
+127.0.0.1        localhost.localdomain localhost
+::1              localhost6.localdomain6 localhost6
+192.168.1.50 jenkins
+192.168.1.51 worker2
+192.168.1.52 devops
+192.168.1.55 worker
+192.168.1.56 worker3
+192.168.1.57 cent1
+192.168.1.58 salt
+192.168.1.59 cent3
+192.168.1.60 gui
+192.168.1.61 ftp
+192.168.1.62 k8master
+192.168.1.6 windows-test
