@@ -6,6 +6,7 @@ base:
     - hostname-file
     - repo
     - salt-minion
+    - sensu
   'devops':
     - ansible
     - docker
