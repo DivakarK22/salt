@@ -31,7 +31,6 @@ scrape_configs:
       - targets: ['worker2:9100']
       - targets: ['worker:9100']
       - targets: ['salt:9100']
-      - targets: ['cent3:9100']
       - targets: ['ftp:9100']
       - targets: ['gui:9100']
       - targets: ['k8master:9100']
