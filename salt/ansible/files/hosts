@@ -1,7 +1,6 @@
 [all]
 cent1
 salt ansible_user=root ansible_password=123
-cent3
 worker
 worker2
 worker3
