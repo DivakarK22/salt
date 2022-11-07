@@ -5,7 +5,7 @@ worker
 worker2
 worker3
 ftp
-gui
+gui ansible_user=root ansible_password=123
 k8master
 
 [docker]
