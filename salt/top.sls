@@ -7,6 +7,7 @@ base:
     - repo
     - salt-minion
     - sensu
+    - ruby
   'devops':
     - ansible
     - docker
