@@ -17,7 +17,6 @@ sensu:
     - enable: True
   pkg:
     - installed
-    - name: sensu-go-cli
-  pkg:
-    - installed
-    - name: sensu-go-agent
+    - name:
+       - sensu-go-cli
+       - sensu-go-agent  
