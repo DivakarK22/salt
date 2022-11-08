@@ -15,7 +15,6 @@ sensu:
     - name: sensu-agent
     - reload: True
     - enable: True
-    - require:
-      - pkgs:
-        - sensu-go-agent
-        - sensu-go-client
+  pkg:
+    - installed
+    - name: sensu-go-agent
