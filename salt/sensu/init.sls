@@ -7,4 +7,5 @@ sensu:
   service:
     - running
     - name: sensu-agent
+    - reload: True
     - enable: True
