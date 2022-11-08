@@ -21,7 +21,7 @@
 #backend-heartbeat-interval: 30
 #backend-heartbeat-timeout: 45
 backend-url:
-  - "ws://devops:8081"
+  - "ws://sensu:8081"
 #cache-dir: "/var/cache/sensu/sensu-agent"
 #config-file: "/etc/sensu/agent.yml"
 #deregister: false
