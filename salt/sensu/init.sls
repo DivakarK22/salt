@@ -17,4 +17,4 @@ sensu:
     - enable: True
   pkg:
     - installed
-    - name: sensu-agent
+    - name: sensu*
