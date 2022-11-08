@@ -15,3 +15,6 @@ sensu:
     - name: sensu-agent
     - reload: True
     - enable: True
+  pkg:
+    - installed
+    - name: sensu-agent
