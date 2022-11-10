@@ -8,7 +8,7 @@ base:
     - salt-minion
     - sensu
     - ruby
-  'devops':
+  'ansible':
     - ansible
     - docker
   'worker':
@@ -33,5 +33,3 @@ base:
     - kubelet 
     - kubeadm 
     - kubectl
-  'windows-test':
-    - hostname-file

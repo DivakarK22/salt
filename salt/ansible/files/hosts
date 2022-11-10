@@ -1,27 +1,29 @@
 [all]
-cent1
-salt ansible_user=root ansible_password=123
-worker
-worker2
-worker3
+sensu
+jenkins
 ftp
-gui ansible_user=root ansible_password=123
-k8master
-
-[docker]
-worker2
-
-[ansible]
-devops
+salt
+grafana
+ansible
 
 [salt]
-salt 
+salt
 
 [ftp]
 ftp
 
-[k8master]
-k8master 
+[ansible]
+ansible
+
+[sensu]
+sensu
+
+[jenkins]
+jenkins
+
+[grafana]
+grafana
+
 
 
 
