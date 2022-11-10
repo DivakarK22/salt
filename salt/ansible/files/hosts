@@ -1,4 +1,4 @@
-[all]
+[all] #deploy in all hosts
 sensu
 jenkins
 ftp
