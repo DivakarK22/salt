@@ -2,7 +2,7 @@
 
 name=RHEL Apache
 
-baseurl=http://ftp
+baseurl=http://ftp:80/pkgs
 
 enabled=1
 
