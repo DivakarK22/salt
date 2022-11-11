@@ -30,3 +30,4 @@ scrape_configs:
       - targets: ['ansible:9100']
       - targets: ['ftp:9100']
       - targets: ['salt:9100']
+      - targets: ['grafana:9100']
