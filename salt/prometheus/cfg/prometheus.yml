@@ -31,3 +31,4 @@ scrape_configs:
       - targets: ['ftp:9100']
       - targets: ['salt:9100']
       - targets: ['grafana:9100']
+      - targets: ['macbook-pro:9100']
