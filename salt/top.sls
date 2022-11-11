@@ -24,7 +24,7 @@ base:
     - nano
     - chrome
     - docker
-  'cent1':
+  'grafana':
     - prometheus
   'salt':
     - salt-master
