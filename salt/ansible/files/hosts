@@ -5,6 +5,8 @@ ftp
 salt
 grafana
 ansible
+k8
+docker
 
 [salt] 
 salt
