@@ -13,6 +13,7 @@ base:
     - docker
   'docker':
     - docker
+    - kubeadm
   'gui':
     - terminator
     - libre
@@ -24,7 +25,7 @@ base:
     - prometheus
   'salt':
     - salt-master
-  'k8master':
+  'k8':
     - docker
     - kubelet 
     - kubeadm 
