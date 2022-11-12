@@ -11,11 +11,7 @@ base:
   'ansible':
     - ansible
     - docker
-  'worker':
-    - docker
-  'worker2':
-    - docker
-  'worker3':
+  'docker':
     - docker
   'gui':
     - terminator

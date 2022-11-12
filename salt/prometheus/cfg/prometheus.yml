@@ -32,3 +32,5 @@ scrape_configs:
       - targets: ['salt:9100']
       - targets: ['grafana:9100']
       - targets: ['macbook-pro:9100']
+      - targets: ['k8:9100']
+      - targets: ['docker:9100']
