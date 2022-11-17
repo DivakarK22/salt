@@ -14,13 +14,6 @@ base:
   'docker':
     - docker
     - kubeadm
-  'gui':
-    - terminator
-    - libre
-    - atom
-    - nano
-    - chrome
-    - docker
   'grafana':
     - prometheus
   'salt':
