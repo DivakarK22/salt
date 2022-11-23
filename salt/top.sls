@@ -22,4 +22,4 @@ base:
     - docker
     - kubelet 
     - kubeadm 
-    - kubectl
+    - kubectl #testß
