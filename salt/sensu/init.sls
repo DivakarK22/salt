@@ -9,7 +9,7 @@ sensu:
     - name: sensu-go-agent
   file:
     - recurse
-    - name: /etc/sensu/agent.yml
+    - name: /etc/sensu/
     - source: salt://sensu/
     - user: root
     - file_mode: '0755'
