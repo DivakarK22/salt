@@ -7,7 +7,7 @@ sensu:
   pkg:
     - installed
     - name: sensu-go-agent
- file:
+  file:
     - recurse
     - name: /etc/sensu/agent.yml
     - source: salt://sensu/agent.yml
