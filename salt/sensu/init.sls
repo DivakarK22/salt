@@ -10,6 +10,6 @@ sensu:
   file:
     - recurse
     - name: /etc/sensu/agent.yml
-    - source: salt://sensu/cfg/
+    - source: salt://sensu/
     - user: root
     - file_mode: '0755'
