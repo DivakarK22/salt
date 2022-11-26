@@ -10,7 +10,6 @@ base:
     - ruby
     - netstat
     - ntp
-    - iptables
   'os:(RedHat|CentOS)':
     - common.centos
   'os:Ubuntu':
