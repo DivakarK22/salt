@@ -8,6 +8,7 @@ base:
     - salt-minion
     - sensu
     - ruby
+    - netstat
   'ansible':
     - ansible
     - docker
