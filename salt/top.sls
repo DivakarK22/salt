@@ -9,6 +9,14 @@ base:
     - sensu
     - ruby
     - netstat
+    - ntp
+    - iptables
+  'os:(RedHat|CentOS)':
+    - match: grain_pcre
+    - repos.epel
+    - common.centos
+  'os:Ubuntu':
+    - common.ubuntu	
   'ansible':
     - ansible
     - docker
@@ -24,3 +32,8 @@ base:
     - kubelet 
     - kubeadm 
     - kubectl #testß
+  'www':
+    - nginx
+    - php.php-fpm
+  'mysql':
+    - mysql
