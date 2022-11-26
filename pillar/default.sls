@@ -1,1 +1,1 @@
-editor: vim
+netstat: net-tools
