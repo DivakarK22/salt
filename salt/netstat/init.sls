@@ -1,3 +1,3 @@
 netstat:
   pkg.installed:
-    - name: {{ pillar['net-tools'] }}
+    - name: {{ pillar['netstat'] }}
