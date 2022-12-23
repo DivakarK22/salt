@@ -1,4 +1,4 @@
-sensu:
+sensu-agent:
   service:
     - running
     - name: sensu-agent
@@ -10,6 +10,6 @@ sensu:
   file:
     - recurse
     - name: /etc/sensu/
-    - source: salt://sensu/
+    - source: salt://sensu-agent/
     - user: root
     - file_mode: '0755'

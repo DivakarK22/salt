@@ -6,7 +6,8 @@ base:
     - hostname-file
     - repo
     - salt-minion
-    - sensu
+    - sensu-agent
+    - sensu-backend
     - ruby
     - netstat
     - ntp
