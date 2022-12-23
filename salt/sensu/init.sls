@@ -4,11 +4,6 @@ sensu:
     - name: sensu-agent
     - reload: True
     - enable: True
-  service:
-    - running
-    - name: sensu-backend
-    - reload: True
-    - enable: True
   pkg:
     - installed
     - name: sensu-go-agent
