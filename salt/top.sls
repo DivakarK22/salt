@@ -23,6 +23,7 @@ base:
     - kubeadm
   'grafana':
     - prometheus
+    - grafana
   'salt':
     - salt-master
   'k8':
