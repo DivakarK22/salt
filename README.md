@@ -169,7 +169,7 @@ salt '*' service.restart <service name>
 salt '*' service.stop <service name>
 ```
 
-# Network
+## Network
 
 Do some network stuff on your minions.
 
