@@ -51,7 +51,7 @@ This list is partly inspired by the fine lists on:
 * http://www.xenuser.org/saltstack-cheat-sheet/
 * https://github.com/saltstack/salt/wiki/Cheat-Sheet
 
-# Table of Contents
+#& Table of Contents
 
 <!-- TOC -->
 
