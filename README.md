@@ -140,7 +140,7 @@ salt-run jobs.list_jobs   # get list of historic jobs
 salt-run jobs.lookup_jid <job id number>  # get details of this specific job
 ```
 
-# Sysadmin specific
+## Sysadmin specific
 Some stuff that is specifically of interest for sysadmins.
 
 ## System and status
