@@ -7,7 +7,6 @@ base:
     - repo
     - salt-minion
     - sensu-agent
-    - sensu-backend
     - ruby
     - netstat
     - ntp
@@ -36,3 +35,5 @@ base:
     - php.php-fpm
   'mysql':
     - mysql
+  'sensu':
+    - sensu-backend
