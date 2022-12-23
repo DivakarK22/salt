@@ -4,6 +4,3 @@ sensu-backend:
     - name: sensu-backend
     - reload: True
     - enable: True
-  pkg:
-    - installed
-    - name: sensu-backend
