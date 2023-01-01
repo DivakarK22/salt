@@ -7,6 +7,7 @@ grafana
 ansible
 k8
 docker
+testing
 
 [salt] 
 salt
