@@ -10,6 +10,7 @@ base:
     - ruby
     - netstat
     - ntp
+    - sensu-core
   'os:(RedHat|CentOS)':
     - common.centos
   'os:Ubuntu':
