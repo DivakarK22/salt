@@ -1,0 +1,82 @@
+{% set sensu = salt['grains.filter_by']({
+    'default': {
+        'transport': {
+            'name': 'rabbitmq',
+            'reconnect_on_error': 'true',
+        },
+        'client': {
+            'embedded_ruby': False,
+            'nagios_plugins': False,
+            'name': salt['grains.get']('fqdn'),
+            'address': salt['grains.get']('ipv4')[0],
+            'subscriptions': ['all'],
+            'safe_mode': False
+        },
+        'redis': {
+            'host': 'localhost',
+            'port': 6379,
+            'password': None,
+        },
+        'api': {
+            'host': 'localhost',
+            'port': 4567,
+            'user': 'admin',
+            'password': ''
+        },
+        'rabbitmq': {
+            'host': 'localhost',
+            'port': 5672,
+            'vhost': '/sensu',
+            'user': 'sensu',
+            'password': ''
+        },
+        'server': {
+            'embedded_ruby': False,
+        },
+        'ssl': {
+            'enable': False
+        },
+        'uchiwa': {
+            'host': '0.0.0.0',
+            'port': 3000,
+            'loglevel': 'info',
+            'refresh': 10,
+            'stats': 10,
+            'users': [
+                {
+                'username': 'admin',
+                'password': 'secret',
+                'role': { 'readonly': False }
+                },
+                {
+                'username': 'guest',
+                'password': 'secret',
+                'role': { 'readonly': True }
+                }
+            ]
+        },
+        'sites': [
+            {
+                'name': 'Sensu',
+                'host': '127.0.0.1',
+                'port': 4567,
+                'ssl': False,
+                'insecure': False,
+                'path': '',
+                'user': 'admin',
+                'password': '',
+                'timeout': 5
+            }
+        ],
+        'paths': {
+            'plugins'                : 'sensu/files/plugins',
+            'conf_d'                 : 'sensu/files/conf.d',
+            'extensions'             : 'sensu/files/extensions',
+            'mutators'               : 'sensu/files/mutators',
+            'handlers'               : 'sensu/files/handlers',
+            'checks_file'            : '/etc/sensu/conf.d/checks.json',
+            'standalone_checks_file' : '/etc/sensu/conf.d/standalone_checks.json',
+            'handlers_file'          : '/etc/sensu/conf.d/handlers.json',
+        },
+    },
+}, merge=salt['pillar.get']('sensu'), default='default') %}

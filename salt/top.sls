@@ -10,6 +10,7 @@ base:
     - ruby
     - netstat
     - ntp
+    - sensu.client
   'os:(RedHat|CentOS)':
     - common.centos
   'os:Ubuntu':
@@ -37,3 +38,7 @@ base:
     - mysql
   'sensu':
     - sensu-backend
+  'testing':
+    - sensu.server
+    - sensu.api
+    - sensu.uchiwa

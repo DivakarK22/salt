@@ -1,0 +1,13 @@
+{% set services = salt['grains.filter_by']({
+    'Debian': {
+        'cron': 'cron',
+        'apache': 'apache2',
+        'nagios_plugins': 'nagios-plugins',
+    },
+    'RedHat': {
+        'cron': 'crond',
+        'apache': 'httpd',
+        'nagios_plugins': 'nagios-plugins-all',
+    },
+}, merge=salt['pillar.get']('sensu:lookup'), default='Debian') %}
+
