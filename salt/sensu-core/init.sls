@@ -8,9 +8,7 @@ sensu-core:
   pkg:
     - installed
     - pkgs: 
-       - sensu-server
-       - sensu-api
-       - sensu-uchiwa
+       - sensu
   service:
     - running
     - name: sensu-server
