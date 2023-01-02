@@ -1,0 +1,16 @@
+{
+    "sensu": [
+      {
+        "name": "MAIN",
+        "host": "192.168.1.58",
+        "port": 4567,
+        "timeout": 10
+      }
+    ],
+    "uchiwa": {
+      "host": "0.0.0.0",
+      "port": 3000,
+      "refresh": 10
+    }
+  }
+  

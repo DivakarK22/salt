@@ -6,11 +6,10 @@ base:
     - hostname-file
     - repo
     - salt-minion
-    - sensu-agent
+#    - sensu-agent
     - ruby
     - netstat
     - ntp
-    - sensu.client
   'os:(RedHat|CentOS)':
     - common.centos
   'os:Ubuntu':
@@ -30,7 +29,7 @@ base:
     - docker
     - kubelet 
     - kubeadm 
-    - kubectl #testß
+    - kubectl
   'www':
     - nginx
     - php.php-fpm
@@ -38,7 +37,5 @@ base:
     - mysql
   'sensu':
     - sensu-backend
-  'testing':
-    - sensu.server
-    - sensu.api
-    - sensu.uchiwa
+  'sensu-core':
+    - sensu-core

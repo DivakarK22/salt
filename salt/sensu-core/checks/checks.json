@@ -1,0 +1,55 @@
+{
+    "checks": {
+       "redis": {
+         "command": "/opt/sensu/embedded/bin/check-process.rb -p redis",
+         "subscribers": [
+           "192.168.1.58"
+         ],
+         "interval": 10
+       },
+       "chronyd": {
+         "command": "/opt/check-process.rb -p chronyd",
+         "subscribers": [
+           "dev"
+         ],
+         "interval": 10
+       },
+       "rabbitmq-server": {
+         "command": "/opt/sensu/embedded/bin/check-process.rb -p rabbitmq-server",
+         "subscribers": [
+           "192.168.1.63"
+         ],
+         "interval": 10
+       },
+       "sensu-server": {
+         "command": "/opt/sensu/embedded/bin/check-process.rb -p sensu-server -c 0",
+         "subscribers": [
+           "192.168.1.63"
+         ],
+         "interval": 1
+       },
+       "kdump": {
+         "command": "/opt/sensu/embedded/bin/check-process.rb -p kdump",
+         "subscribers": [
+           "192.168.1.63"
+         ],
+         "interval": 10
+       },
+       "sshd": {
+         "command": "/opt/sensu/embedded/bin/check-process.rb -p sshd",
+         "subscribers": [
+           "sensu"
+         ],
+         "interval": 10
+       },
+       "check-cpu": {
+         "command": "/opt/check-process.rb -c 100",
+         "subscribers": [
+           "dev",
+           "test"
+         ],
+         "interval": 10
+       }
+  }
+
+}
