@@ -3,51 +3,51 @@
        "redis": {
          "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p redis",
          "subscribers": [
-           "dev"
+           "sensu-master"
          ],
          "interval": 10
        },
        "chronyd": {
          "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p chronyd",
          "subscribers": [
-           "dev"
+           "el7"
          ],
          "interval": 10
        },
        "rabbitmq-server": {
          "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p rabbitmq-server",
          "subscribers": [
-           "dev"
+           "el7"
          ],
          "interval": 10
        },
        "sensu-server": {
-         "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p sensu-server -c 0",
+         "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p sensu-server",
          "subscribers": [
-           "dev"
+           "sensu-master"
          ],
          "interval": 10
        },
        "kdump": {
          "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p kdump",
          "subscribers": [
-           "dev"
+           "el7"
          ],
          "interval": 10
        },
        "sshd": {
          "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p sshd",
          "subscribers": [
-           "sensu",
-           "dev"
+           "sensu-master",
+           "el7"
          ],
          "interval": 10
        },
        "check-cpu": {
          "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -c 170",
          "subscribers": [
-           "dev",
-           "test"
+           "sensu-master",
+           "el7"
          ],
          "interval": 10
        }
