@@ -1,5 +1,4 @@
 sensu-client:
-  file:
    file.managed:
     - user: root
     - group: root
