@@ -1,15 +1,10 @@
 sensu-client:
   file:
-    - managed
+    - recurse
+    - name: /etc/sensu/conf.d
+    - source: salt://sensu-core/conf.d
     - user: root
-    - group: root
-    - mode: '0644'
-    - names:
-       - /etc/sensu/:
-         - source: salt://sensu-client/conf.d/
-       - /etc/sensu/:
-         - source: salt://sensu-client/checks/
-
+    - file_mode: '0755'
   pkg:
     - installed
     - pkgs: 
@@ -19,3 +14,11 @@ sensu-client:
     - running
     - name: sensu-client
     - enable: True
+
+sensu-client:
+  file:
+    - recurse
+    - name: /etc/sensu/checks
+    - source: salt://sensu-core/checks
+    - user: root
+    - file_mode: '0755'
