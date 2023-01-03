@@ -14,10 +14,10 @@
          ],
          "interval": 10
        },
-       "rabbitmq-server": {
-         "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p rabbitmq-server",
+       "httpd": {
+         "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p httpd",
          "subscribers": [
-           "el7"
+           "ftp"
          ],
          "interval": 10
        },
