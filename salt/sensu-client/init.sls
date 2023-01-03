@@ -1,5 +1,5 @@
 sensu-client:
-  file.managed:
+  file:
     - user: root
     - group: root
     - mode: '0644'
