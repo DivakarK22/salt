@@ -5,6 +5,12 @@ sensu-client:
     - source: salt://sensu-client/conf.d
     - user: root
     - file_mode: '0755'
+  file:
+    - recurse
+    - name: /etc/sensu/checks
+    - source: salt://sensu-client/checks
+    - user: root
+    - file_mode: '0755'
   pkg:
     - installed
     - pkgs: 

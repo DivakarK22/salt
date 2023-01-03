@@ -43,7 +43,7 @@
          "interval": 10
        },
        "check-cpu": {
-         "command": "/opt/check-process.rb -c 100",
+         "command": "/etc/sensu/checks/check-process.rb -c 100",
          "subscribers": [
            "dev",
            "test"
