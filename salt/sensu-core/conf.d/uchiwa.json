@@ -2,7 +2,7 @@
     "sensu": [
       {
         "name": "MAIN",
-        "host": "192.168.1.58",
+        "host": "sensu-core",
         "port": 4567,
         "timeout": 10
       }

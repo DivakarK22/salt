@@ -1,0 +1,11 @@
+
+{
+    "rabbitmq": {
+      "host": "sensu-core",
+      "port": 5672,
+      "vhost": "/sensu",
+      "user": "sensu",
+      "password": "secret"
+    }
+  }
+  
