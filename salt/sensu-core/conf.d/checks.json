@@ -7,13 +7,6 @@
          ],
          "interval": 10
        },
-       "chronyd": {
-         "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p chronyd",
-         "subscribers": [
-           "el7"
-         ],
-         "interval": 10
-       },
        "httpd": {
          "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p httpd",
          "subscribers": [
