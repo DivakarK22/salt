@@ -14,8 +14,6 @@ sensu-client:
     - running
     - name: sensu-client
     - enable: True
-
-sensu-client:
   file:
     - recurse
     - name: /etc/sensu/checks
