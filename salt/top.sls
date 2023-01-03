@@ -37,6 +37,6 @@ base:
   'mysql':
     - mysql
   'sensu':
-    - sensu-backend
+#    - sensu-backend
   'sensu-core':
     - sensu-core
