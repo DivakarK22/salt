@@ -14,9 +14,3 @@ sensu-client:
     - running
     - name: sensu-client
     - enable: True
-  file:
-    - recurse
-    - name: /etc/sensu/checks
-    - source: salt://sensu-core/checks
-    - user: root
-    - file_mode: '0755'
