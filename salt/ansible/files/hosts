@@ -7,7 +7,7 @@ grafana
 ansible
 k8
 docker
-testing
+sensu-core
 
 [salt] 
 salt
