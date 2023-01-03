@@ -5,9 +5,9 @@ sensu-client:
     - group: root
     - mode: '0644'
     - names:
-       - /etc/sensu/conf.d/:
+       - /etc/sensu/:
          - source: salt://sensu-client/conf.d/
-       - /etc/sensu/checks/:
+       - /etc/sensu/:
          - source: salt://sensu-client/checks/
 
   pkg:
