@@ -1,7 +1,7 @@
 {
     "checks": {
        "redis": {
-         "command": "/etc/sensu/conf.d/checks/check-process.rb -p redis",
+         "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p redis",
          "subscribers": [
            "dev"
          ],
@@ -15,28 +15,28 @@
          "interval": 10
        },
        "rabbitmq-server": {
-         "command": "/etc/sensu/conf.d/checks/check-process.rb -p rabbitmq-server",
+         "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p rabbitmq-server",
          "subscribers": [
            "dev"
          ],
          "interval": 10
        },
        "sensu-server": {
-         "command": "/etc/sensu/conf.d/checks/check-process.rb -p sensu-server -c 0",
+         "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p sensu-server -c 0",
          "subscribers": [
            "dev"
          ],
-         "interval": 1
+         "interval": 10
        },
        "kdump": {
-         "command": "/etc/sensu/conf.d/checks/check-process.rb -p kdump",
+         "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p kdump",
          "subscribers": [
            "dev"
          ],
          "interval": 10
        },
        "sshd": {
-         "command": "/etc/sensu/conf.d/checks/check-process.rb -p sshd",
+         "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p sshd",
          "subscribers": [
            "sensu",
            "dev"
@@ -44,7 +44,7 @@
          "interval": 10
        },
        "check-cpu": {
-         "command": "/etc/sensu/conf.d/checks/check-process.rb -c 10",
+         "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -c 170",
          "subscribers": [
            "dev",
            "test"
