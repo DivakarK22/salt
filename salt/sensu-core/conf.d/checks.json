@@ -37,7 +37,7 @@
          "interval": 10
        },
        "check-cpu": {
-         "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -c 170",
+         "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -c 150",
          "subscribers": [
            "sensu-master",
            "el7"
