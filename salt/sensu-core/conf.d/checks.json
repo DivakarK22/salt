@@ -17,7 +17,7 @@
        "httpd": {
          "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p httpd",
          "subscribers": [
-           "ftp"
+           "client:ftp"
          ],
          "interval": 10
        },
