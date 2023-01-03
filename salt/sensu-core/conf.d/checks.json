@@ -3,7 +3,7 @@
        "redis": {
          "command": "/etc/sensu/conf.d/checks/check-process.rb -p redis",
          "subscribers": [
-           "192.168.1.58"
+           "dev"
          ],
          "interval": 10
        },
@@ -17,28 +17,29 @@
        "rabbitmq-server": {
          "command": "/etc/sensu/conf.d/checks/check-process.rb -p rabbitmq-server",
          "subscribers": [
-           "192.168.1.63"
+           "dev"
          ],
          "interval": 10
        },
        "sensu-server": {
          "command": "/etc/sensu/conf.d/checks/check-process.rb -p sensu-server -c 0",
          "subscribers": [
-           "192.168.1.63"
+           "dev"
          ],
          "interval": 1
        },
        "kdump": {
          "command": "/etc/sensu/conf.d/checks/check-process.rb -p kdump",
          "subscribers": [
-           "192.168.1.63"
+           "dev"
          ],
          "interval": 10
        },
        "sshd": {
          "command": "/etc/sensu/conf.d/checks/check-process.rb -p sshd",
          "subscribers": [
-           "sensu"
+           "sensu",
+           "dev"
          ],
          "interval": 10
        },
