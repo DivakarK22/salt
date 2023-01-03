@@ -28,8 +28,8 @@
          ],
          "interval": 10
        },
-       "kdump": {
-         "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p kdump",
+       "salt-minion": {
+         "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p salt-minion",
          "subscribers": [
            "el7"
          ],
