@@ -1,7 +1,7 @@
 {
     "client": {
       "name": "$HOSTNAME",
-      "address": "sensu-core",
+      "address": "$HOSTNAME",
       "environment": "development",
       "subscriptions": [
         "dev",
