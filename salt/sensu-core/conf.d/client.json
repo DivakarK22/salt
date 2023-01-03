@@ -1,11 +1,11 @@
 {
     "client": {
-      "name": "rhel-client",
+      "name": "sensu-core",
       "address": "sensu-core",
       "environment": "development",
       "subscriptions": [
         "dev",
-        "rhel-hosts"
+        "el7"
       ],
       "socket": {
         "bind": "127.0.0.1",
