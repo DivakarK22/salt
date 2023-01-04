@@ -58,8 +58,8 @@
         ],
         "interval": 10
       }
-      "check-disk": {
-        "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-disk-usage.rb -c 85 -w 75",
+      "check-hosts": {
+        "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-cmd.rb -o 64  -c "ping -c 2 jenkins;ping -c 2 grafana;ping -c 2 sensu-core;ping -c 2 ansible;ping -c 2 k8;ping -c 2 sensu;ping -c 2 ftp;ping -c 2 docker",
         "subscribers": [
           "el7"
         ],
