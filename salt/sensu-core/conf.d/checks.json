@@ -51,8 +51,8 @@
         ],
         "interval": 10
       },
-      "check-disk": {
-        "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-disk-usage.rb -c 85 -w 75",
+      "check-cpu-threads": {
+        "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-threads-count.rb -c 240",
         "subscribers": [
           "el7"
         ],
