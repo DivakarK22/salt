@@ -50,14 +50,8 @@
           "el7"
         ],
         "interval": 10
-      },
-      "check-cpu-threads": {
-        "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-threads-count.rb -c 240",
-        "subscribers": [
-          "el7"
-        ],
-        "interval": 10
       }
+
       
   }
 
