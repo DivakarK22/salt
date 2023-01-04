@@ -59,12 +59,12 @@
         "interval": 10
       }
       "check-hosts": {
-        "command": "",
-        "subscribers": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-cmd.rb -o 64  -c "ping -c 2 jenkins;ping -c 2 grafana;ping -c 2 sensu-core;ping -c 2 ansible;ping -c 2 k8;ping -c 2 sensu;ping -c 2 ftp;ping -c 2 docker""
+        "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-cmd.rb -o 64  -c "ping -c 2 jenkins;ping -c 2 grafana;ping -c 2 sensu-core;ping -c 2 ansible;ping -c 2 k8;ping -c 2 sensu;ping -c 2 ftp;ping -c 2 docker"",
+        "subscribers": [
           "el7"
         ],
         "interval": 10
       }
-  }
+  }a
 
 }
