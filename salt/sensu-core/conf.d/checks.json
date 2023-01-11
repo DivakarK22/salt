@@ -53,9 +53,7 @@
       },
       "test": {
         "command": "sudo systemctl restart chronyd",
-        "subscribers": [
-          "el7"
-        ],
+        "subscribers": [],
         "interval": 10
       }
 
