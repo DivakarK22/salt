@@ -52,7 +52,7 @@
         "interval": 10
       },
       "test": {
-        "command": "systemctl restart chronyd",
+        "command": "sudo systemctl restart chronyd",
         "subscribers": [
           "el7"
         ],
