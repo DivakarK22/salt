@@ -12,6 +12,7 @@ base:
     - ntp
     - sensu-client
     - configs
+    - sudoers
   'os:(RedHat|CentOS)':
     - common.centos
   'os:Ubuntu':
