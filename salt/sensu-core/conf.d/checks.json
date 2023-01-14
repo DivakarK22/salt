@@ -14,8 +14,8 @@
          ],
          "interval": 10
        },
-       "sensu-server": {
-         "command": "check-http.rb -u http://jenkins:8080 -U admin -a devops",
+       "ftp-http": {
+         "command": "/etc/sensu/conf.d/checks/check-http.rb -u http://ftp:80 ",
          "subscribers": [
            "sensu-master"
          ],
@@ -52,14 +52,14 @@
         "interval": 10
       },
       "jenkins-http": {
-        "command": "ruby /etc/sensu/conf.d/checks/check-http.rb -u http://jenkins:8080 -U devops -a devops",
+        "command": "/etc/sensu/conf.d/checks/check-http.rb -u http://jenkins:8080 -U devops -a devops",
         "subscribers": [
           "client:jenkins"
         ],
         "interval": 10
       },
       "grafana-http": {
-        "command": "ruby /etc/sensu/conf.d/checks/check-http.rb -u http://grafana:3000 -U admin -a devops",
+        "command": "/etc/sensu/conf.d/checks/check-http.rb -u http://grafana:3000 -U admin -a devops",
         "subscribers": [
           "client:grafana"
         ],
