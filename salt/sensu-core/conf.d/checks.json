@@ -52,16 +52,16 @@
         "interval": 10
       },
       "jenkins-http": {
-        "command": "/root/.rbenv/shims/check-http.rb -u http://jenkins:8080 -U devops -a devops",
+        "command": "ruby /etc/sensu/conf.d/checks/check-http.rb -u http://jenkins:8080 -U devops -a devops",
         "subscribers": [
-          "sensu-master"
+          "client:jenkins"
         ],
         "interval": 10
       },
       "grafana-http": {
-        "command": "/root/.rbenv/shims/check-http.rb -u http://grafana:3000 -U admin -a devops",
+        "command": "ruby /etc/sensu/conf.d/checks/check-http.rb -u http://grafana:3000 -U admin -a devops",
         "subscribers": [
-          "sensu-master"
+          "client:grafana"
         ],
         "interval": 10
       }
