@@ -11,6 +11,7 @@ base:
     - netstat
     - ntp
     - sensu-client
+    - configs
   'os:(RedHat|CentOS)':
     - common.centos
   'os:Ubuntu':
