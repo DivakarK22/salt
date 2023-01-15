@@ -15,7 +15,7 @@
          "interval": 10
        },
        "ftp-http": {
-         "command": "/etc/sensu/conf.d/checks/check-http.rb -u http://ftp:80 ",
+         "command": "/etc/sensu/conf.d/checks/check-http.rb -u http://ftp/pkgs ",
          "subscribers": [
            "client:ftp"
          ],
