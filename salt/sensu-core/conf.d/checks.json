@@ -17,7 +17,7 @@
        "ftp-http": {
          "command": "/etc/sensu/conf.d/checks/check-http.rb -u http://ftp:80 ",
          "subscribers": [
-           "sensu-master"
+           "client:ftp"
          ],
          "interval": 10
        },
