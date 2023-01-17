@@ -14,13 +14,6 @@
          ],
          "interval": 10
        },
-       "ftp-http": {
-         "command": "/etc/sensu/conf.d/checks/check-http.rb -u http://ftp/pkgs ",
-         "subscribers": [
-           "client:ftp"
-         ],
-         "interval": 10
-       },
        "salt-minion": {
          "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p salt-minion",
          "subscribers": [
