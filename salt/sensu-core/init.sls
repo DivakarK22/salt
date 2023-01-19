@@ -8,10 +8,11 @@ sensu-core:
   pkg:
     - installed
     - pkgs: 
-       - sensu-server
-       - sensu-client
-       - sensu-api
+       - sensu
   service:
     - running
-    - name: sensu-server
+    - name: 
+       - sensu-server
+       - sensu-api
+       - sensu-client
     - enable: True
