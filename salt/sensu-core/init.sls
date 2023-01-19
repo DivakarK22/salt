@@ -11,8 +11,5 @@ sensu-core:
        - sensu
   service:
     - running
-    - name: 
-       - sensu-server
-       - sensu-api
-       - sensu-client
+    - name: sensu-server
     - enable: True
