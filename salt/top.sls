@@ -13,6 +13,7 @@ base:
     - sensu-client
     - configs
     - sudoers
+    - lm_sensors
   'os:(RedHat|CentOS)':
     - common.centos
   'os:Ubuntu':
