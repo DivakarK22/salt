@@ -1,5 +1,6 @@
 base:
   '*':
+    - _reactor
     - vim
     - ncdu
     - htop
