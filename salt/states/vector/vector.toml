@@ -1,0 +1,194 @@
+[sources.socket]
+type = "socket"
+address = "127.0.0.1:9000"
+mode = "tcp"
+max_length = 102400
+decoding.codec = "json"
+
+# Rewrite event timestamp using internal Salt event timestamp
+[transforms.timestamp]
+type = "remap"
+inputs = ["socket"]
+source = """
+.timestamp = parse_timestamp!(.data._stamp, format: "%Y-%m-%dT%H:%M:%S%.6f")
+"""
+
+# Replace JID, MID and other high cardinality substrings with keywords
+[transforms.tag]
+type = "remap"
+inputs = ["timestamp"]
+source = """
+.generic_tag = replace!(.tag, r'^[0-9_]+$', "JID")  # see https://github.com/saltstack/salt/pull/42752 for underscore JID explanation
+.generic_tag = replace(.generic_tag, r'^(?P<b>salt/job|salt/run)/[0-9_]+/(?P<e>.+)$', "$$b/JID/$$e")
+.generic_tag = replace(.generic_tag, r'^(?P<b>minion/refresh)/[0-9a-zA-Z_\\.-]+$', "$$b/MID")
+.generic_tag = replace(.generic_tag, r'^(?P<b>salt/job/JID/ret)/[0-9a-zA-Z_\\.-]+$', "$$b/MID")
+.generic_tag = replace(.generic_tag, r'^(?P<b>salt/job/JID/prog)/[0-9a-zA-Z_\\.-]+/[0-9]+$', "$$b/MID/RUN")
+.generic_tag = replace(.generic_tag, r'^(?P<b>salt/minion)/[0-9a-zA-Z_\\.-]+/(?P<e>start)$', "$$b/MID/$$e")
+.generic_tag = replace(.generic_tag, r'^(?P<b>salt/cloud)/[0-9a-zA-Z_\\.-]+/(?P<e>[a-z_]+)$', "$$b/VM/$$e")
+.generic_tag = replace(.generic_tag, r'^(?P<b>salt/stats)/MWorker-[0-9]+$', "$$b/MW")
+"""
+
+# Extract some job args as top-level keys
+[transforms.args]
+type = "remap"
+inputs = ["tag"]
+source = """
+.jid = .data.jid
+.success = .data.success
+.fun = .data.fun
+.fun_args = []
+.fun_kwargs = {}
+map_values(array(.data.fun_args) ?? []) -> |v| { if is_string(v) { .fun_args = push(.fun_args, v) } else if is_object(v) { .fun_kwargs = v }}
+.first_arg = .fun_args[0]
+.saltenv = .fun_kwargs.saltenv
+
+if includes(["state.highstate", "state.apply"], .fun) {
+   .job_name = .saltenv
+} else if includes(["runner.state.orch", "runner.state.orchestrate"], .fun) {
+   .job_name = .first_arg
+}
+
+.schedule = .data.schedule != null # better left for metadata fields
+
+.traceID = replace(uuid_v4(), "-", "")
+"""
+
+# Only include the event tags that we are interested in
+[transforms.filter]
+type = "filter"
+inputs = ["args"]
+condition = """
+(.generic_tag == "salt/run/JID/ret" && includes(["runner.state.orchestrate", "runner.state.orch"], .fun) && .first_arg != null) # ||
+# (.generic_tag == "salt/job/JID/ret/MID" && .fun == "state.highstate") ||
+# (.generic_tag == "salt/job/JID/ret/MID" && .fun == "state.apply" && length(array!(.fun_args)) == 0)
+"""
+
+# Calculate a summary for highstate-formatted events
+[transforms.summary]
+type = "remap"
+inputs = ["filter"]
+source = """
+_duration = 0
+_num_total = 0
+_num_succeeded = 0
+_num_changed = 0
+_num_failed = 0
+
+if includes(["state.highstate", "state.apply", "runner.state.orch", "runner.state.orchestrate"], .data.fun) && is_object(.data.return) {
+  if exists(.data.id) {
+    .id = .data.id
+    .id_type = "minion"
+    for_each(object(.data.return) ?? {}) -> |st, res| {
+      _duration = _duration + to_float(get(res, ["duration"]) ?? 0) ?? 0
+      _num_total = _num_total + 1
+      if res.result == true {
+        _num_succeeded = _num_succeeded + 1
+      } else {
+        _num_failed = _num_failed + 1
+      }
+      if is_object(res.changes) && !is_empty(object!(res.changes)) {
+        _num_changed = _num_changed + 1
+      }
+    }
+  } else if exists(.data.return.data) {
+    for_each(object(.data.return.data) ?? {}) -> |host, ret| {
+      if !exists(.id) {
+         .id = host
+         .id_type = "master"
+      }
+      _dur = 0
+      for_each(object(ret) ?? {}) -> |st, res| {
+        _dur = _dur + to_float(get(res, ["duration"]) ?? 0) ?? 0
+        _num_total = _num_total + 1
+        if res.result == true {
+          _num_succeeded = _num_succeeded + 1
+        } else {
+          _num_failed = _num_failed + 1
+        }
+        if is_object(res.changes) && !is_empty(object!(res.changes)) {
+          _num_changed = _num_changed + 1
+        }
+      }
+      _duration = if _dur > _duration { _dur } else { _duration }
+    }
+  }
+}
+.duration = _duration
+.num_total = _num_total
+.num_succeeded = _num_succeeded
+.num_changed = _num_changed
+.num_failed = _num_failed
+"""
+
+[transforms.pre_prom]
+type = "remap"
+inputs = ["summary"]
+source = """
+.success = to_int(.success) ?? null
+del(.data)
+"""
+
+[transforms.pre_loki]
+type = "remap"
+inputs = ["summary"]
+source = """
+del(.data)
+del(.master_id)
+del(.minion_id)
+del(.host)
+del(.source_type)
+"""
+
+[transforms.to_prom]
+type = "log_to_metric"
+inputs = ["pre_prom"]
+[[transforms.to_prom.metrics]]
+field = "duration"
+name = "duration"
+type = "gauge"
+[transforms.to_prom.metrics.tags]
+job_name = "{{ job_name }}"
+saltenv = "{{ saltenv }}"
+id = "{{ id }}"
+[[transforms.to_prom.metrics]]
+field = "success"
+name = "success"
+type = "gauge"
+[transforms.to_prom.metrics.tags]
+job_name = "{{ job_name }}"
+saltenv = "{{ saltenv }}"
+id = "{{ id }}"
+
+[sinks.loki]
+type = "loki"
+inputs = ["pre_loki"]
+endpoint = "https://loki.example.com"
+compression = "none"
+auth.strategy = "basic"
+auth.user = "LOKI_USER"
+auth.password = "LOKI_PASS"
+remove_label_fields = true
+labels.job = "salt_events"
+labels.job_name = "{{ job_name }}"
+labels.saltenv = "{{ saltenv }}"
+labels.id = "{{ id }}"
+encoding.codec = "json"
+out_of_order_action = "accept"
+
+[sinks.http]
+type = "http"
+inputs = ["filter"]
+uri = "http://127.0.0.1:8000/endpoint"
+compression = "none"
+[sinks.http.encoding]
+codec = "json"
+
+[sinks.prometheus]
+type = "prometheus_remote_write"
+inputs = ["to_prom"]
+endpoint = "https://prom.example.com/api/prom/push"
+healthcheck.enabled = false
+auth.strategy = "basic"
+auth.user = "PROM_USER"
+auth.password = "PROM_PASS"
+default_namespace = "salt"

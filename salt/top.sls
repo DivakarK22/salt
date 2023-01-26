@@ -1,6 +1,5 @@
 base:
   '*':
-    - _reactor
     - vim
     - ncdu
     - htop
@@ -11,6 +10,7 @@ base:
     - ruby
     - netstat
     - ntp
+    - push_to_prometheus
     - sensu-client
     - configs
     - sudoers
