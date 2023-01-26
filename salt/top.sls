@@ -10,7 +10,7 @@ base:
     - ruby
     - netstat
     - ntp
-    - push_to_prometheus
+    - highstate_failure
     - sensu-client
     - configs
     - sudoers
