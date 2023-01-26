@@ -1,6 +1,6 @@
 push_to_prometheus:
   local.state.single:
-  - tgt: {{ data['id'] }}
+  - tgt: k8
   - args:
   - fun: file.managed
   - name: /var/lib/node_exporter/textfile_collector/salt_highstate.prom
