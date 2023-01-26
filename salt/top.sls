@@ -14,6 +14,7 @@ base:
     - configs
     - sudoers
     - sensors
+    - push_to_prometheus
   'os:(RedHat|CentOS)':
     - common.centos
   'os:Ubuntu':
