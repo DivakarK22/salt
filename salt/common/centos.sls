@@ -7,7 +7,6 @@ centos:
   pkg:
     - installed
     - name: lm_sensors
-{% endif %}
 {% if grains['id'] == 'k8' %}
 k8:
   pkg:
@@ -15,7 +14,6 @@ k8:
     - name: kubeadm
     - name: kubectl
     - name: kubelet
-{% endif %}
 {% if grains['id'] == 'sensu-core' %}
 sensu-core:
   pkg:
@@ -27,10 +25,15 @@ sensu-core:
   pkg:
     - installed
     - name: sensu-client
-{% endif %}
 {% if grains['id'] == 'ftp' %}
 ftp:
   pkg:
     - installed
     - name: httpd
 {% endif %}
+{% endif %}
+{% endif %}
+{% endif %}
+
+
+
