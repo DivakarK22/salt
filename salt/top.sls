@@ -14,6 +14,7 @@ base:
     - configs
     - sudoers
     - sensors
+    - common.centos
   'os:(RedHat|CentOS)':
     - common.centos
   'os:Ubuntu':
