@@ -1,7 +1,6 @@
 base:
   '*':
     - vim
-    - common.centos
     - ncdu
     - htop
     - hostname-file
@@ -15,8 +14,6 @@ base:
     - configs
     - sudoers
     - sensors
-#   - push_to_prometheus
-    - dash.push
   'os:(RedHat|CentOS)':
     - common.centos
   'os:Ubuntu':
