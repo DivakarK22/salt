@@ -9,7 +9,7 @@ vsftpd:
 
 {% if grains['id'] == 'k8' %}
 k8:
-  pkg.installed:
+  k8.installed:
     - pkg: kubeadm
     - pkg: kubectl
     - pkg: kubelet
@@ -17,18 +17,18 @@ k8:
 
 {% if grains['id'] == 'sensu-core' %}
 sensu-core:
-  pkg.installed:
+  sensu-core.installed:
     - pkg: sensu-core
     - pkg: sensu-api
     - pkg: sensu-client
 {% else %}
-  pkg.installed:
+  sensu-core.installed:
     - pkg: sensu-client
 {% endif %}
 
 {% if grains['id'] == 'ftp' %}
 ftp:
-  pkg.installed:
+  ftp.installed:
     - pkg: unattended-upgrades
     - pkg: httpd
 {% endif %}
