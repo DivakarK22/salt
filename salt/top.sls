@@ -29,11 +29,11 @@ base:
     - grafana
   'salt':
     - salt-master
-  'k8':
-    - docker
-    - kubelet 
-    - kubeadm 
-    - kubectl
+  # 'k8':
+  # - docker
+  # - kubelet 
+  # - kubeadm 
+  # - kubectl
   'www':
     - nginx
     - php.php-fpm
