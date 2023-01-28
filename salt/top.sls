@@ -41,4 +41,4 @@ base:
   'mysql':
     - mysql
   'sensu-core':
-    - sensu-core
+  #  - sensu-core
