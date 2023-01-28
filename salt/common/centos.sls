@@ -1,39 +1,36 @@
 {% if grains['os'] == 'CentOS' %}
 centos:
-  pkg:
-    - installed
-    - name: vsftpd
+  pkg.installed:
+    - pkg: BASIC
+    - pkg: vsftpd
 {% else %}
-  pkg:
-    - installed
-    - name: lm_sensors
+  pkg.installed:
+    - pkg: unattended-upgrades
+    - pkg: lm_sensors
 {% if grains['id'] == 'k8' %}
 k8:
-  pkg:
-    - installed
-    - name: kubeadm
-    - name: kubectl
-    - name: kubelet
+  pkg.installed:
+    - pkg: unattended-upgrades
+    - pkg: kubeadm
+    - pkg: kubectl
+    - pkg: kubelet
 {% if grains['id'] == 'sensu-core' %}
 sensu-core:
-  pkg:
-    - installed
-    - name: sensu-core
-    - name: sensu-api
-    - name: sensu-client
+  pkg.installed:
+    - pkg: unattended-upgrades
+    - pkg: sensu-core
+    - pkg: sensu-api
+    - pkg: sensu-client
 {% else %}
-  pkg:
-    - installed
-    - name: sensu-client
+  pkg.installed:
+    - pkg: unattended-upgrades
+    - pkg: sensu-client
 {% if grains['id'] == 'ftp' %}
 ftp:
-  pkg:
-    - installed
-    - name: httpd
+  pkg.installed:
+    - pkg: unattended-upgrades
+    - pkg: httpd
 {% endif %}
 {% endif %}
 {% endif %}
 {% endif %}
-
-
-
