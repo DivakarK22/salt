@@ -7,3 +7,4 @@ centos:
   pkg:
     - installed
     - name: lm_sensors
+{% endif %}
