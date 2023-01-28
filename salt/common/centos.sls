@@ -8,27 +8,35 @@ vsftpd:
 {% endif %}
 
 {% if grains['id'] == 'k8' %}
-k8:
-  k8.installed:
+kubeadm:
+  pkg.installed:
     - pkg: kubeadm
-    - pkg: kubectl
+kubelet:
+  pkg.installed:
     - pkg: kubelet
+kubectl:
+  pkg.installed:
+    - pkg: kubectl
 {% endif %}
 
 {% if grains['id'] == 'sensu-core' %}
 sensu-core:
-  sensu-core.installed:
+  pkg.installed:
     - pkg: sensu-core
-    - pkg: sensu-api
+sensu-client:
+  pkg.installed:
     - pkg: sensu-client
+sensu-api:
+  pkg.installed:
+    - pkg: sensu-api
 {% else %}
-  sensu-core.installed:
+sensu-client:
+  pkg.installed:
     - pkg: sensu-client
 {% endif %}
 
 {% if grains['id'] == 'ftp' %}
-ftp:
-  ftp.installed:
-    - pkg: unattended-upgrades
+httpd:
+  pkg.installed:
     - pkg: httpd
 {% endif %}
