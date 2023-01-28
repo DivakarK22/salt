@@ -1,4 +1,3 @@
-{%- if data['fun'] == 'state.highstate' -%}
 push:
  local.state.single:
  - tgt: {{ data['id'] }}
@@ -14,4 +13,3 @@ push:
  salt_highstate_timestamp {{ data['_stamp'] }}
  salt_highstate_total {{ data['return'] | length }}
  salt_highstate_jid {{ data['jid'] }}
-{%- endif -%}
