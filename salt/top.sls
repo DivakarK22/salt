@@ -15,7 +15,6 @@ base:
     - sudoers
     - sensors
     - common.centos
-    - common.k8
   'os:(RedHat|CentOS)':
     - common.centos
   'os:Ubuntu':
