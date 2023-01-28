@@ -1,6 +1,6 @@
 push:
  local.state.single:
- - tgt: {{ data['id'] }}
+ - tgt: salt
  - args:
  - fun: file.managed
  - name: /var/lib/node_exporter/textfile_collector/salt_highstate.prom
