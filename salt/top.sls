@@ -10,7 +10,7 @@ base:
     - ruby
     - netstat
     - ntp
-    - sensu-client
+#    - sensu-client
     - configs
     - sudoers
     - sensors
