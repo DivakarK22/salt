@@ -1,7 +1,7 @@
 base:
   '*':
     - vim
-    - centos
+    - common.centos
     - ncdu
     - htop
     - hostname-file
