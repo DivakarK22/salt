@@ -1,5 +1,5 @@
 {% if grains['os'] == 'CentOS' %}
-vsftpd:
+lm_sensors:
   pkg.installed:
     - pkg: lm_sensors
   service.running:
@@ -7,7 +7,7 @@ vsftpd:
     - enable: True
 {% else %}
   pkg.installed:
-    - pkg: vsftpd
+    - pkg: lm_sensors
   service.running:
     - name: lm_sensors
     - enable: True
