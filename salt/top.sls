@@ -1,6 +1,7 @@
 base:
   '*':
     - vim
+    - centos
     - ncdu
     - htop
     - hostname-file

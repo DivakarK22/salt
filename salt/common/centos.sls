@@ -1,7 +1,9 @@
+{% if grains['os'] == 'CentOS' %}
 centos:
   pkg:
     - installed
     - name: vsftpd
+{% else %}
   pkg:
     - installed
-    - name: zabbix40
+    - name: lm_sensors
