@@ -1,6 +1,5 @@
 push:
- local.state.single:
- - tgt: test
+ - tgt: salt
  - args:
  - fun: file.managed
  - name: /var/lib/node_exporter/textfile_collector/salt_highstate.prom
