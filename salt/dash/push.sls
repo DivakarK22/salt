@@ -9,7 +9,7 @@ push:
  - contents: |
  # HELP salt_highstate_status to check Salt highstate run status. If value is 1 then highstate is getting failed.
  # TYPE salt_highstate_status gauge
- salt_highstate_status retcode 0
+ salt_highstate_status
  salt_highstate_timestamp 
  salt_highstate_total 
- salt_highstate_jid jid 123
+ salt_highstate_jid 
