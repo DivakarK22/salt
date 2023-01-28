@@ -40,5 +40,5 @@ base:
     - php.php-fpm
   'mysql':
     - mysql
-  'sensu-core':
+  #'sensu-core':
   #  - sensu-core
