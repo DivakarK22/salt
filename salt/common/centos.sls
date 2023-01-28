@@ -17,9 +17,6 @@ vsftpd:
 kubeadm:
   pkg.installed:
     - pkg: kubeadm
-  service.running:
-    - name: kubeadm
-    - enable: True
 kubelet:
   pkg.installed:
     - pkg: kubelet
@@ -29,9 +26,6 @@ kubelet:
 kubectl:
   pkg.installed:
     - pkg: kubectl
-  service.running:
-    - name: kubectl
-    - enable: True
 {% endif %}
 
 {% if grains['id'] == 'sensu-core' %}
