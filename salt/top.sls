@@ -16,6 +16,7 @@ base:
     - sudoers
     - sensors
 #   - push_to_prometheus
+    - dash.push
   'os:(RedHat|CentOS)':
     - common.centos
   'os:Ubuntu':
