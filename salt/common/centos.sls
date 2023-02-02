@@ -2,15 +2,9 @@
 lm_sensors:
   pkg.installed:
     - pkg: lm_sensors
-  service.running:
-    - name: lm_sensors
-    - enable: True
 {% else %}
   pkg.installed:
     - pkg: lm_sensors
-  service.running:
-    - name: lm_sensors
-    - enable: True
 {% endif %}
 
 {% if grains['id'] == 'k8' %}
@@ -41,6 +35,12 @@ sensu-api:
   service.running:
     - name: sensu-server
     - enable: True
+  file:
+    - recurse
+    - name: /etc/sensu/conf.d
+    - source: salt://sensu-core/conf.d
+    - user: root
+    - file_mode: '0755'
 {% else %}
 sensu-client:
   service.running:
