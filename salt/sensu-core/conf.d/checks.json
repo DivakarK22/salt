@@ -57,7 +57,29 @@
           "client:grafana"
         ],
         "interval": 10
+      },
+      "node-exporter": {
+        "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p node_exporter",
+        "subscribers": [
+          "el7"
+        ],
+        "interval": 10
+      },
+      "prometheus": {
+        "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p prometheus",
+        "subscribers": [
+          "client:grafana"
+        ],
+        "interval": 10
+      },
+      "lm-sensor": {
+        "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p lm_sensors",
+        "subscribers": [
+          "el7"
+        ],
+        "interval": 10
       }
+
 
       
   }
