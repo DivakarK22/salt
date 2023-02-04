@@ -35,3 +35,4 @@ scrape_configs:
       - targets: ['k8:9100']
       - targets: ['docker:9100']
       - targets: ['sensu-core:9100']
+      - targets: ['openvpn:9100']
