@@ -11,9 +11,9 @@ base:
     - ntp
     - configs
     - sudoers
-    - sensors
   'os:(CentOS)':
     - common.centos
+    - sensors
   'os:Ubuntu':
     - common.ubuntu	
   'ansible':
