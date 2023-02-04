@@ -1,6 +1,5 @@
 base:
   '*':
-    - vim
     - ncdu
     - htop
     - hostname-file
@@ -11,9 +10,10 @@ base:
     - ntp
     - configs
     - sudoers
-  'os:(CentOS)':
+  'os:CentOS':
     - common.centos
     - sensors
+    - vim
   'os:Ubuntu':
     - common.ubuntu	
   'ansible':
