@@ -38,7 +38,7 @@
          "interval": 10
        },
        "check-memory": {
-        "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-memory.rb  -w 100 -c 50",
+        "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-memory.rb  -w 60 -c 30",
         "subscribers": [
           "el7"
         ],
