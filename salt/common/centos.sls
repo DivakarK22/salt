@@ -6,7 +6,6 @@ lm_sensors:
   pkg.installed:
     - pkg: lm_sensors
 {% endif %}
-
 {% if grains['id'] == 'k8' %}
 kubeadm:
   pkg.installed:

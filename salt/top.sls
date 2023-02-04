@@ -6,16 +6,13 @@ base:
     - hostname-file
     - repo
     - salt-minion
-#    - sensu-agent
     - ruby
     - netstat
     - ntp
-#    - sensu-client
     - configs
     - sudoers
     - sensors
-    - common.centos
-  'os:(RedHat|CentOS)':
+  'os:(CentOS)':
     - common.centos
   'os:Ubuntu':
     - common.ubuntu	
