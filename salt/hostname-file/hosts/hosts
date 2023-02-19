@@ -1,13 +1,13 @@
 127.0.0.1        localhost.localdomain localhost
 ::1              localhost6.localdomain6 localhost6
-192.168.1.50 ftp
-192.168.1.51 grafana
-192.168.1.52 jenkins
-192.168.1.53 salt
-192.168.1.54 testing
-192.168.1.55 ansible
+192.168.1.50 ansible
+192.168.1.51 docker
+192.168.1.52 grafana
+192.168.1.53 jenkins
+192.168.1.54 salt
+192.168.1.55 sensu
 192.168.1.49 macbook-pro
-192.168.1.56 k8
-192.168.1.57 docker
-192.168.1.58 sensu-core
-192.168.1.59 openvpn
+192.168.1.56 ubuntu
+#192.168.1.57 docker
+#192.168.1.58 sensu-core
+#192.168.1.59 openvpn
