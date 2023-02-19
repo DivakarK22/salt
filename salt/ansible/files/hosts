@@ -1,5 +1,4 @@
 [all] #deploy in all hosts
-testing
 jenkins
 ftp
 salt
@@ -19,7 +18,7 @@ ftp
 ansible
 
 [sensu]
-sensu-core
+sensu
 
 [jenkins]
 jenkins
