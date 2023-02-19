@@ -7,7 +7,7 @@ grafana
 ansible
 k8
 docker
-sensu-core
+sensu
 
 [salt] 
 salt
@@ -33,8 +33,7 @@ k8
 [docker]
 docker
 
-[testing]
-testing
 
-[ubuntu]
-openvpn
+
+#[ubuntu]
+#ubuntu
