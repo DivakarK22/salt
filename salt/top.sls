@@ -10,7 +10,9 @@ base:
     - ntp
     - configs
     - sudoers
-  #'os:CentOS':
+  'os:(RedHat|CentOS)':
+    - match: grain
+    - common.centos
   'os:Ubuntu':
     - common.ubuntu	
   'ansible':
@@ -24,5 +26,3 @@ base:
     - grafana
   'salt':
     - salt-master
-  'biosversion:090008':
-    - common.centos
