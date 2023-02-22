@@ -10,6 +10,7 @@ base:
     - ntp
     - configs
     - sudoers
+    - common.centos
   'os:(RedHat|CentOS)':
     - match: grain
     - common.centos
