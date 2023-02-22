@@ -10,11 +10,8 @@ base:
     - ntp
     - configs
     - sudoers
-    - common.centos
   'os:CentOS':
     - common.centos
-    - sensors
-    - vim
   'os:Ubuntu':
     - common.ubuntu	
   'ansible':
@@ -28,15 +25,3 @@ base:
     - grafana
   'salt':
     - salt-master
-  # 'k8':
-  # - docker
-  # - kubelet 
-  # - kubeadm 
-  # - kubectl
-  'www':
-    - nginx
-    - php.php-fpm
-  'mysql':
-    - mysql
-  #'sensu-core':
-  #  - sensu-core
