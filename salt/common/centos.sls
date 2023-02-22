@@ -21,7 +21,7 @@ kubectl:
     - pkg: kubectl
 {% endif %}
 
-{% if grains['id'] == 'sensu-core' %}
+{% if grains['id'] == 'sensu' %}
 sensu-core:
   service.running:
     - name: sensu-api
@@ -37,7 +37,7 @@ sensu-api:
   file:
     - recurse
     - name: /etc/sensu/conf.d
-    - source: salt://sensu-core/conf.d
+    - source: salt://sensu/conf.d
     - user: root
     - file_mode: '0755'
 {% else %}
