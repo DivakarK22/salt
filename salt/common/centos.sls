@@ -2,6 +2,10 @@
 lm_sensors:
   pkg.installed:
     - pkg: lm_sensors
+sensu-client:
+  service.running:
+    - name: sensu-client
+    - enable: True
 {% else %}
   pkg.installed:
     - pkg: lm_sensors

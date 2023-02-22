@@ -10,6 +10,7 @@ base:
     - ntp
     - configs
     - sudoers
+    - common.centos
   'os:CentOS':
     - common.centos
     - sensors
