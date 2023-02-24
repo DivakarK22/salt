@@ -22,7 +22,7 @@ kubectl:
 {% endif %}
 
 {% if grains['id'] == 'sensu' %}
-sensu-core:
+sensu:
   pkg.installed:
     - pkg: sensu
   service.running:
