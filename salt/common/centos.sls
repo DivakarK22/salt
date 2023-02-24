@@ -23,6 +23,8 @@ kubectl:
 
 {% if grains['id'] == 'sensu' %}
 sensu-core:
+  pkg.installed:
+    - pkg: sensu
   service.running:
     - name: sensu-api
     - enable: True
