@@ -8,7 +8,7 @@ base:
     - ruby
     - netstat
     - ntp
-    - configs
+  #  - configs
     - sudoers
     - common.centos
   'os:(RedHat|CentOS)':
