@@ -5,7 +5,7 @@ base:
     - hostname-file
     - repo
     - salt-minion
-    - ruby
+  #  - ruby
     - netstat
     - ntp
   #  - configs
