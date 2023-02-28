@@ -46,6 +46,8 @@ sensu-client:
     - name: sensu-client
     - enable: True
   file:
+    - name: /etc/sensu/conf.d/client.json
+    - file_mode: '0755'
     - serialize
     - user: sensu
     - group: sensu
@@ -60,6 +62,7 @@ sensu-client:
             address: {{ id }}
             keepalive: {{ pillar['sensu']['keepalive'] }}
             notifications: {{ pillar['sensu']['notifications'] }}
+
 {% endif %}
 
 {% if grains['id'] == 'ftp' %}
