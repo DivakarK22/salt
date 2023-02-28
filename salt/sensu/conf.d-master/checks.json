@@ -1,28 +1,28 @@
 {
     "checks": {
        "redis": {
-         "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p redis",
+         "command": "ruby /etc/sensu/conf.d/checks/check-process.rb -p redis",
          "subscribers": [
            "sensu-master"
          ],
          "interval": 10
        },
        "httpd": {
-         "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p httpd",
+         "command": "ruby /etc/sensu/conf.d/checks/check-process.rb -p httpd",
          "subscribers": [
            "client:ftp"
          ],
          "interval": 10
        },
        "salt-minion": {
-         "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p salt-minion",
+         "command": "ruby /etc/sensu/conf.d/checks/check-process.rb -p salt-minion",
          "subscribers": [
            "el7"
          ],
          "interval": 10
        },
        "sshd": {
-         "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p sshd",
+         "command": "ruby /etc/sensu/conf.d/checks/check-process.rb -p sshd",
          "subscribers": [
            "sensu-master",
            "el7"
@@ -30,7 +30,7 @@
          "interval": 10
        },
        "check-cpu": {
-         "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -c 170",
+         "command": "ruby /etc/sensu/conf.d/checks/check-process.rb -c 170",
          "subscribers": [
            "sensu-master",
            "el7"
@@ -38,7 +38,7 @@
          "interval": 10
        },
        "check-memory": {
-        "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-memory.rb  -w 60 -c 30",
+        "command": "ruby /etc/sensu/conf.d/checks/check-memory.rb  -w 60 -c 30",
         "subscribers": [
           "el7"
         ],
@@ -59,14 +59,14 @@
         "interval": 100
       },
       "node-exporter": {
-        "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p node_exporter",
+        "command": "ruby /etc/sensu/conf.d/checks/check-process.rb -p node_exporter",
         "subscribers": [
           "el7"
         ],
         "interval": 10
       },
       "prometheus": {
-        "command": "/opt/sensu/embedded/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p prometheus",
+        "command": "ruby /etc/sensu/conf.d/checks/check-process.rb -p prometheus",
         "subscribers": [
           "client:grafana"
         ],
