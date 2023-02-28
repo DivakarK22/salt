@@ -5,19 +5,3 @@ redis:
       - pkg: redis
   pkg:
     - installed
-  file:
-    - name: /etc/sensu/conf.d/client.json
-    - file_mode: '0755'
-    - serialize
-    - user: sensu
-    - group: sensu
-    - makedirs: True
-    - formatter: json
-    - dataset:
-        client:
-            subscriptions: { grains['id'] }}
-            safe_mode: false
-            name: { grains['id'] }}
-            address: { grains['id'] }}
-            keepalive: {{ pillar['sensu']['keepalive'] }}
-            notifications: {{ pillar['sensu']['notifications'] }}

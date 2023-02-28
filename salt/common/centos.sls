@@ -59,8 +59,10 @@ sensu-client:
             safe_mode: false
             name: { grains['id'] }}
             address: { grains['id'] }}
-            keepalive: {{ pillar['sensu']['keepalive'] }}
-            notifications: {{ pillar['sensu']['notifications'] }}
+            subscriptions: el7
+        socket:
+            bind: 127.0.0.1
+            port: 3030
 {% endif %}
 
 {% if grains['id'] == 'ftp' %}
