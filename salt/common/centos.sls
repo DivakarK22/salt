@@ -30,7 +30,7 @@ sensu-client:
   service.running:
     - name: sensu-client
     - enable: True
-sensu-api:
+sensu-server:
   service.running:
     - name: sensu-server
     - enable: True
