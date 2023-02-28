@@ -30,6 +30,24 @@ sensu-client:
   service.running:
     - name: sensu-client
     - enable: True
+  file:
+    - name: /etc/sensu/conf.d/client.json
+    - file_mode: '0755'
+    - serialize
+    - user: sensu
+    - group: sensu
+    - makedirs: True
+    - formatter: json
+    - dataset:
+        client:
+            safe_mode: false
+            name: {{ grains['id'] }}
+            address: {{ grains['id'] }}
+            subscriptions: [ "{{ grains['id'] }}" , "el7" ]
+        socket:
+            bind: 127.0.0.1
+            port: 3030
+
 sensu-server:
   service.running:
     - name: sensu-server
