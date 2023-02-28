@@ -58,7 +58,7 @@ sensu-client:
             safe_mode: false
             name: {{ grains['id'] }}
             address: {{ grains['id'] }}
-            subscriptions: el7
+            subscriptions: [ "{{ grains['id'] }}" , "el7" ]
         socket:
             bind: 127.0.0.1
             port: 3030
