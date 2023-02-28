@@ -51,7 +51,6 @@ sensu-client:
     - serialize
     - user: sensu
     - group: sensu
-    - mode: '0644'
     - makedirs: True
     - formatter: json
     - dataset:
