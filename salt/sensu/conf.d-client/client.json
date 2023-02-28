@@ -1,7 +1,7 @@
 {
     "client": {
-      "name": "$HOSTNAME",
-      "address": "$HOSTNAME",
+      "name": "{{ id }}",
+      "address": "{{ id }}",
       "environment": "development",
       "subscriptions": [
         "el7"
