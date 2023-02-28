@@ -328,7 +328,7 @@ interface: 192.168.1.55
 
 # Enable auto_accept, this setting will automatically accept all incoming
 # public keys from the minions. Note that this is insecure.
-#auto_accept: False
+auto_accept: True
 
 # The size of key that should be generated when creating new keys.
 #keysize: 2048
