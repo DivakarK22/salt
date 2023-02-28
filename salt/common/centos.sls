@@ -38,7 +38,7 @@ sensu-api:
     - enable: True
   file:
     - recurse
-    - name: /etc/sensu/conf.d
+    - name: /etc/sensu/conf.d-master
     - source: salt://sensu/conf.d
     - user: root
     - file_mode: '0755'
@@ -47,6 +47,12 @@ sensu-client:
   service.running:
     - name: sensu-client
     - enable: True
+  file:
+    - recurse
+    - name: /etc/sensu/conf.d-client
+    - source: salt://sensu/conf.d
+    - user: root
+    - file_mode: '0755'
 {% endif %}
 
 {% if grains['id'] == 'ftp' %}
