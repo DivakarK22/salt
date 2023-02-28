@@ -38,8 +38,8 @@ sensu-api:
     - enable: True
   file:
     - recurse
-    - name: /etc/sensu/conf.d-master
-    - source: salt://sensu/conf.d
+    - name: /etc/sensu/conf.d
+    - source: salt://sensu/conf.d-master
     - user: root
     - file_mode: '0755'
 {% else %}
@@ -49,8 +49,8 @@ sensu-client:
     - enable: True
   file:
     - recurse
-    - name: /etc/sensu/conf.d-client
-    - source: salt://sensu/conf.d
+    - name: /etc/sensu/conf.d
+    - source: salt://sensu/conf.d-client
     - user: root
     - file_mode: '0755'
 {% endif %}
