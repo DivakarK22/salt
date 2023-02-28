@@ -21,7 +21,7 @@ kubectl:
     - pkg: kubectl
 {% endif %}
 
-{% if grains['id'] == 'testvm' %}
+{% if grains['id'] == 'sensu' %}
 sensu:
   pkg.installed:
     - pkg: sensu
