@@ -41,16 +41,32 @@ sensu-api:
     - user: root
     - file_mode: '0755'
 {% else %}
-sensu-client:
-  service.running:
-    - name: sensu-client
-    - enable: True
+#sensu-client:
+ # service.running:
+  #  - name: sensu-client
+   # - enable: True
+  #file:
+  #  - recurse
+  #  - name: /etc/sensu/conf.d
+  # - source: salt://sensu/conf.d-client
+  #  - user: root
+  #  - file_mode: '0755'
+/etc/sensu/conf.d/client.json:
   file:
-    - recurse
-    - name: /etc/sensu/conf.d
-    - source: salt://sensu/conf.d-client
-    - user: root
-    - file_mode: '0755'
+    - serialize
+    - user: sensu
+    - group: sensu
+    - mode: '0644'
+    - makedirs: True
+    - formatter: json
+    - dataset:
+        client:
+            subscriptions: {{ id }}
+            safe_mode: false
+            name: {{ id }}
+            address: {{ id }}
+            keepalive: {{ pillar['sensu']['keepalive'] }}
+            notifications: {{ pillar['sensu']['notifications'] }}
 {% endif %}
 
 {% if grains['id'] == 'ftp' %}
