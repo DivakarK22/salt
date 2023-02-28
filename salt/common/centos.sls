@@ -41,17 +41,10 @@ sensu-api:
     - user: root
     - file_mode: '0755'
 {% else %}
-#sensu-client:
- # service.running:
-  #  - name: sensu-client
-   # - enable: True
-  #file:
-  #  - recurse
-  #  - name: /etc/sensu/conf.d
-  # - source: salt://sensu/conf.d-client
-  #  - user: root
-  #  - file_mode: '0755'
-/etc/sensu/conf.d/client.json:
+sensu-client:
+  service.running:
+    - name: sensu-client
+    - enable: True
   file:
     - serialize
     - user: sensu
