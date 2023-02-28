@@ -63,6 +63,13 @@ sensu-client:
         socket:
             bind: 127.0.0.1
             port: 3030
+sensu-copy-client:
+  file:
+    - recurse
+    - name: /etc/sensu/conf.d
+    - source: salt://sensu/conf.d-client
+    - user: root
+    - file_mode: '0755'
 {% endif %}
 
 {% if grains['id'] == 'ftp' %}
