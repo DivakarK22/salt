@@ -44,6 +44,8 @@ sensu-api:
     - file_mode: '0755'
 {% else %}
 sensu-client:
+  pkg.installed:
+    - pkg: sensu
   service.running:
     - name: sensu-client
     - enable: True
