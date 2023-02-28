@@ -1,7 +1,7 @@
 {% if grains['os'] == 'CentOS' %}
-lm_sensors:
+sensu:
   pkg.installed:
-    - pkg: lm_sensors
+    - pkg: sensu
 {% else %}
   pkg.installed:
     - pkg: lm_sensors
@@ -22,9 +22,7 @@ kubectl:
 {% endif %}
 
 {% if grains['id'] == 'sensu' %}
-sensu:
-  pkg.installed:
-    - pkg: sensu
+sensu-api:
   service.running:
     - name: sensu-api
     - enable: True
@@ -44,8 +42,6 @@ sensu-api:
     - file_mode: '0755'
 {% else %}
 sensu-client:
-  pkg.installed:
-    - pkg: sensu
   service.running:
     - name: sensu-client
     - enable: True
