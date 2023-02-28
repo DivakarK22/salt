@@ -15,9 +15,9 @@ redis:
     - formatter: json
     - dataset:
         client:
-            subscriptions: {{ id }}
+            subscriptions: { grains['id'] }}
             safe_mode: false
-            name: {{ id }}
-            address: {{ id }}
+            name: { grains['id'] }}
+            address: { grains['id'] }}
             keepalive: {{ pillar['sensu']['keepalive'] }}
             notifications: {{ pillar['sensu']['notifications'] }}
