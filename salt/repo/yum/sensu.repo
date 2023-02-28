@@ -1,0 +1,9 @@
+[sensu]
+
+name=sensu-main
+
+baseurl=https://buildlogs.centos.org/centos/7/opstools/x86_64/
+
+gpgcheck=0
+
+enabled=1
