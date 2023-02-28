@@ -55,10 +55,10 @@ sensu-client:
     - formatter: json
     - dataset:
         client:
-            subscriptions: { grains['id'] }}
+            subscriptions: {{ grains['id'] }}
             safe_mode: false
-            name: { grains['id'] }}
-            address: { grains['id'] }}
+            name: {{ grains['id'] }}
+            address: {{ grains['id'] }}
             subscriptions: el7
         socket:
             bind: 127.0.0.1
