@@ -42,7 +42,7 @@ sensu-client:
         client:
             safe_mode: false
             name: {{ grains['id'] }}
-            address: {{ grains['id'] }}
+            address: {{ grains['fqdn_ip4'] }}
             subscriptions: [ "{{ grains['id'] }}" , "el7" ]
         socket:
             bind: 127.0.0.1
