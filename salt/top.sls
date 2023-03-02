@@ -27,3 +27,5 @@ base:
     - grafana
   'salt':
     - salt-master
+  'windows':
+    - windows
