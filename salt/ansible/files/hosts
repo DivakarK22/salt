@@ -8,6 +8,7 @@ k8
 docker
 sensu
 testing
+test22
 
 [salt] 
 salt
@@ -32,8 +33,3 @@ k8
 
 [docker]
 docker
-
-
-
-#[ubuntu]
-#ubuntu
