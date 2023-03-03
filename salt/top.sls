@@ -1,4 +1,5 @@
 base:
+{% if grains['os'] == 'CentOS' %}
   '*':
     - ncdu
     - htop
@@ -27,5 +28,7 @@ base:
     - grafana
   'salt':
     - salt-master
+{% else %}
   'windows':
     - hostname-file.windows
+{% endif %}
