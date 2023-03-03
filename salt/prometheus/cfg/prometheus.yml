@@ -22,7 +22,7 @@ scrape_configs:
   # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
 
 
-   - job_name: 'cpu-usages'
+   - job_name: 'consumings'
      static_configs:
       - targets: ['ftp:9100']
       - targets: ['jenkins:9100']
