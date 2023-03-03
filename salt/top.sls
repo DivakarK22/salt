@@ -33,4 +33,5 @@ base:
     - hostname-file.windows
     - windows.vlc
     - windows.sensu
+    - windows.vagrant
 {% endif %}
