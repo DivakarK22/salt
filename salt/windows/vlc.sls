@@ -1,4 +1,4 @@
 vlc:
   pkg:
     - installed
-    - version: 2.2.6
+    - version: 3.0.18
