@@ -1,7 +1,7 @@
 vlc:
   '2.2.6':
     full_name: 'VLC media player'
-    installer: 'http://get.videolan.org/vlc/2.2.6/win64/vlc-2.2.6-win64.exe'
+    installer: 'https://get.videolan.org/vlc/3.0.18/win32/vlc-3.0.18-win32.exe'
     install_flags: '/S'
     uninstaller: '%ProgramFiles%/VideoLAN/VLC/uninstall.exe'
     uninstall_flags: '/S'
