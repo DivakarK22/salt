@@ -28,4 +28,4 @@ base:
   'salt':
     - salt-master
   'windows':
-    - hostname-file
+    - hostname-file.windows
