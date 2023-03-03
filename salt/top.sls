@@ -31,4 +31,6 @@ base:
 {% else %}
   'windows':
     - hostname-file.windows
+    - windows.vlc
+    - windows.sensu
 {% endif %}
