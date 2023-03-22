@@ -73,7 +73,7 @@
         "interval": 10
       },
       "py-url-check": {
-        "command": "python3 /home/vagrant/url.py http://sensu1:3000",
+        "command": "sudo python3 /home/vagrant/url.py http://sensu1:3000",
         "subscribers": [
           "client:sensu"
         ],
