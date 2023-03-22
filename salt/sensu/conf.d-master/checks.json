@@ -73,9 +73,51 @@
         "interval": 10
       },
       "py-url-check": {
-        "command": "sudo python3 /etc/sensu/conf.d/checks/url-check.py http://$HOSTNAME:9100/metrics",
+        "command": "sudo python3 /etc/sensu/conf.d/checks/url-check.py http://ansible:9100/metrics",
         "subscribers": [
-          "el7"
+          "client:sensu"
+        ],
+        "interval": 1
+      },
+      "py-url-check": {
+        "command": "sudo python3 /etc/sensu/conf.d/checks/url-check.py http://grafana:9100/metrics",
+        "subscribers": [
+          "client:sensu"
+        ],
+        "interval": 1
+      },
+      "py-url-check": {
+        "command": "sudo python3 /etc/sensu/conf.d/checks/url-check.py http://test22:9100/metrics",
+        "subscribers": [
+          "client:sensu"
+        ],
+        "interval": 1
+      },
+      "py-url-check": {
+        "command": "sudo python3 /etc/sensu/conf.d/checks/url-check.py http://docker:9100/metrics",
+        "subscribers": [
+          "client:sensu"
+        ],
+        "interval": 1
+      },
+      "py-url-check": {
+        "command": "sudo python3 /etc/sensu/conf.d/checks/url-check.py http://k8:9100/metrics",
+        "subscribers": [
+          "client:sensu"
+        ],
+        "interval": 1
+      },
+      "py-url-check": {
+        "command": "sudo python3 /etc/sensu/conf.d/checks/url-check.py http://jenkins:9100/metrics",
+        "subscribers": [
+          "client:sensu"
+        ],
+        "interval": 1
+      },
+      "py-url-check": {
+        "command": "sudo python3 /etc/sensu/conf.d/checks/url-check.py http://python:9100/metrics",
+        "subscribers": [
+          "client:sensu"
         ],
         "interval": 1
       }
