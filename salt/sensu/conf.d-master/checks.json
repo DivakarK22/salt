@@ -71,9 +71,14 @@
           "client:grafana"
         ],
         "interval": 10
+      },
+      "py-url-check": {
+        "command": "python3 /home/vagrant/url.py http://sensu1:3000",
+        "subscribers": [
+          "client:grafana"
+        ],
+        "interval": 10
       }
-
-
       
   }
 
