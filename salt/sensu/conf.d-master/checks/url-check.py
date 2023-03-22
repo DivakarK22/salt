@@ -20,7 +20,7 @@ def check_website_status():
             page = urllib.request.urlopen(req)
             code = str(page.getcode())
             print('The website ' + url + ' has returned a ' + code + ' code')
-            break
+            sys.exit(0)
         except Exception as e:
             print("CRITICAL:HOST SEEMS OFFLINE/NOT-REACHABLE--->"+url)
             break
