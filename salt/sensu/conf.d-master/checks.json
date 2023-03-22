@@ -73,11 +73,11 @@
         "interval": 10
       },
       "py-url-check": {
-        "command": "sudo python3 /home/vagrant/url.py http://sensu1:3000",
+        "command": "sudo python3 /etc/sensu/conf.d/checks/url-check.py http://$HOSTNAME:9100/metrics",
         "subscribers": [
-          "client:sensu"
+          "el7"
         ],
-        "interval": 10
+        "interval": 1
       }
       
   }
