@@ -21,7 +21,7 @@ base:
     - ansible
     - docker
   'docker':
-    - docker
+   # - docker
     - kubeadm
   'grafana':
     - prometheus
