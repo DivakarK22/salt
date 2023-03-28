@@ -1,0 +1,9 @@
+[sensu]
+
+name=sensu-main
+
+baseurl=https://yum.oracle.com/repo/OracleLinux/OL7/addons/x86_64/
+
+gpgcheck=0
+
+enabled=1
