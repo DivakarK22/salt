@@ -127,6 +127,15 @@
           "client:sensu"
         ],
         "interval": 1
+      },
+      "docker": {
+        "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p docker",
+        "subscribers": [
+          "client:docker",
+          "client:k8",
+          "client:ansible"
+        ],
+        "interval": 10
       }
       
   }
