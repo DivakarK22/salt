@@ -9,7 +9,7 @@ base:
   #  - ruby
     - netstat
   #  - ntp
-    - nfs
+  #  - nfs
     - sudoers
     - common.centos
   'os:(RedHat|CentOS)':
