@@ -31,8 +31,6 @@ nfs_master:
     - file_mode: '0755'
 {% endif %}
 
-{% if grains['id'] == 'ftp' %}
-
 {% if grains['id'] == 'sensu' %}
 sensu-api:
   service.running:
