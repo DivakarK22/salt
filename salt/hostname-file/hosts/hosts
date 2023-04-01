@@ -14,3 +14,27 @@
 192.168.1.70 python
 #192.168.1.58 sensu-core
 #192.168.1.59 openvpn
+
+
+192.168.1.50 ansible
+192.168.1.51 docker
+192.168.1.52 grafana
+192.168.1.53 jenkins
+192.168.1.54 k8
+192.168.1.55 salt
+192.168.1.49 macbook-pro
+192.168.1.56 sensu
+192.168.1.57 ftp
+192.168.1.58 testing
+192.168.1.64 test22
+192.168.1.70 python 
+
+/nfs    (rw,sync,no_root_squash)
+/nfs    jenkins(rw,sync,no_root_squash)
+/nfs    sensu(rw,sync,no_root_squash)
+/nfs    docker(rw,sync,no_root_squash)
+/nfs    k8(rw,sync,no_root_squash)
+/nfs    python(rw,sync,no_root_squash)
+/nfs    test22(rw,sync,no_root_squash)
+/nfs    salt(rw,sync,no_root_squash)
+/nfs    grafana(rw,sync,no_root_squash)
