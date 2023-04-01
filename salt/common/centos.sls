@@ -29,6 +29,14 @@ nfs_master:
     - source: salt://nfs/exports/
     - user: root
     - file_mode: '0755'
+{% else %}
+nfs_fstab:
+  file:
+    - recurse
+    - name: /etc/
+    - source: salt://nfs/fstab
+    - user: root
+    - file_mode: '0755'
 {% endif %}
 
 {% if grains['id'] == 'sensu' %}

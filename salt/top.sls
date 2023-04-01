@@ -8,7 +8,7 @@ base:
     - salt-minion
   #  - ruby
     - netstat
-    - ntp
+  #  - ntp
     - nfs
     - sudoers
     - common.centos
