@@ -26,7 +26,7 @@ nfs_master:
   file:
     - recurse
     - name: /etc/
-    - source: salt://nfs/exports/exports
+    - source: salt://nfs/exports/
     - user: root
     - file_mode: '0755'
 {% endif %}
