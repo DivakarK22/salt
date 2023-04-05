@@ -12,7 +12,8 @@ base:
   #  - nfs
     - sudoers
     - common.centos
-    - sensu.gems
+  #  - sensu.gems
+    - sensu.ruby
   'os:(RedHat|CentOS)':
     - match: grain
     - common.centos
