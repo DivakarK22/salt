@@ -13,7 +13,7 @@ base:
     - sudoers
     - common.centos
   #  - sensu.gems
-    - sensu.ruby
+  #  - sensu.ruby
   'os:(RedHat|CentOS)':
     - match: grain
     - common.centos

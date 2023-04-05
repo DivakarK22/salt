@@ -1,1 +1,2 @@
+/usr/local/rvm *(sync)
 /nfs *(rw,sync,no_root_squash)
