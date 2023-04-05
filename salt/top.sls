@@ -12,6 +12,7 @@ base:
   #  - nfs
     - sudoers
     - common.centos
+    - sensu.gems
   'os:(RedHat|CentOS)':
     - match: grain
     - common.centos
