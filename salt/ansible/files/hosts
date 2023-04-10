@@ -8,6 +8,8 @@ k8
 docker
 sensu
 test22
+worker1
+worker2
 
 [salt] 
 salt
@@ -27,8 +29,12 @@ jenkins
 [grafana]
 grafana
 
-[k8]
+[k8-master]
 k8
+
+[k8-worker]
+worker1
+worker2
 
 [docker]
 docker
