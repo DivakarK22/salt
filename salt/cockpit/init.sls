@@ -2,6 +2,8 @@ cockpit:
   pkg:
     - installed
     - pkgs: 
-       - cockpit
-       - reload: True
-       - enable: True
+       - cockpit 
+  service:
+    - name: cockpit
+    - enable: True
+    - running
