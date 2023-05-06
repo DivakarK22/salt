@@ -34,10 +34,16 @@ nfs-utils:
   pkg.installed:
     - pkg: nfs-utils
   cmd.run:
-    - name: Create nfs and rvm
-    - cwd: /
+    - name: Create nfs dir
     - name: mkdir /nfs
+    - check_cmd:
+      - /bin/true
+rvm_folder:
+  cmd.run:
+    - name: Create rvm dir
     - name: mkdir /usr/local/rvm
+    - check_cmd:
+      - /bin/true
   file:
     - recurse
     - name: /etc/
