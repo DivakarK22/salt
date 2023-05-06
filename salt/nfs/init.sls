@@ -1,4 +1,6 @@
 nfs:
+  pkg.installed:
+    - pkg: nfs-utils
   file:
     - recurse
     - name: /etc/
