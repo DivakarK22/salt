@@ -10,6 +10,8 @@ sensu
 test22
 worker1
 worker2
+pxe
+dhcp
 
 [salt] 
 salt
@@ -38,3 +40,9 @@ worker2
 
 [docker]
 docker
+
+[pxe]
+pxe
+
+[dhcp]
+dhcp

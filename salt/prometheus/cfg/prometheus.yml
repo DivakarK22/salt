@@ -37,6 +37,8 @@ scrape_configs:
       - targets: ['test22:9100']
       - targets: ['worker1:9100']
       - targets: ['worker2:9100']
+      - targets: ['dhcp:9100']
+      - targets: ['pxe:9100']
       
    - job_name: jenkins_info
      scrape_interval: 1s
