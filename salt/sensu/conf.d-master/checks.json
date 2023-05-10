@@ -136,19 +136,19 @@
           "client:ansible"
         ],
         "interval": 10
-      }"dhcp": {
+      },"dhcp": {
         "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p dhcp",
         "subscribers": [
           "client:dhcp"
         ],
         "interval": 10
-      }"pxe_xinitd": {
+      },"pxe_xinitd": {
         "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p xinitd",
         "subscribers": [
           "client:pxe"
         ],
         "interval": 10
-      }"pxe_vsftpd":{
+      },"pxe_vsftpd":{
         "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p vsftpd",
         "subscribers": [
           "client:pxe"
