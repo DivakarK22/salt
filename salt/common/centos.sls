@@ -44,6 +44,12 @@ rvm_folder:
     - name: mkdir /usr/local/rvm
     - check_cmd:
       - /bin/true
+node_exporter:
+  cmd.run:
+    - name: install Node_exp
+    - name: bash /etc/prometheus/node_exporter.sh
+    - check_cmd:
+      - /bin/true
 rpcbind:
   service.running:
     - name: rpcbind
