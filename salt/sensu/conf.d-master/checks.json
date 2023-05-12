@@ -143,7 +143,7 @@
         ],
         "interval": 10
       },"pxe_xinitd": {
-        "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p xinitd",
+        "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p xinetd",
         "subscribers": [
           "client:pxe"
         ],
