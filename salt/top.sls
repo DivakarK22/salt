@@ -12,6 +12,7 @@ base:
   #  - ntp
   #  - nfs
     - sudoers
+    - prometheus
     - common.centos
   #  - sensu.gems
   #  - sensu.ruby
