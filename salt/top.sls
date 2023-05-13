@@ -6,7 +6,7 @@ base:
   #  - hostname-file
     - repo
     - salt-minion
-    - cockpit
+  #  - cockpit
   #  - ruby
     - netstat
   #  - ntp
