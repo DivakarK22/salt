@@ -4,12 +4,12 @@ ftp
 salt
 grafana
 ansible
-k8
+#k8
 docker
 sensu
-test22
-worker1
-worker2
+#test22
+#worker1
+#worker2
 pxe
 dhcp
 
@@ -31,15 +31,15 @@ jenkins
 [grafana]
 grafana
 
-[k8-master]
-k8
+#[k8-master]
+#k8
 
-[k8-worker]
-worker1
-worker2
+#[k8-worker]
+#worker1
+#worker2
 
-[docker]
-docker
+#[docker]
+#docker
 
 [pxe]
 pxe
