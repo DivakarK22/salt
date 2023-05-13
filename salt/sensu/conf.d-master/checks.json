@@ -86,27 +86,6 @@
         ],
         "interval": 1
       },
-      "py-url-test22": {
-        "command": "sudo python3 /etc/sensu/conf.d/checks/url-check.py http://test22:9100/metrics",
-        "subscribers": [
-          "client:sensu"
-        ],
-        "interval": 1
-      },
-      "py-url-docker": {
-        "command": "sudo python3 /etc/sensu/conf.d/checks/url-check.py http://docker:9100/metrics",
-        "subscribers": [
-          "client:sensu"
-        ],
-        "interval": 1
-      },
-      "py-url-k8": {
-        "command": "sudo python3 /etc/sensu/conf.d/checks/url-check.py http://k8:9100/metrics",
-        "subscribers": [
-          "client:sensu"
-        ],
-        "interval": 1
-      },
       "py-url-jenkins": {
         "command": "sudo python3 /etc/sensu/conf.d/checks/url-check.py http://jenkins:9100/metrics",
         "subscribers": [
@@ -120,13 +99,6 @@
           "client:k8"
         ],
         "interval": 10
-      },
-      "py-url-python": {
-        "command": "sudo python3 /etc/sensu/conf.d/checks/url-check.py http://python:9100/metrics",
-        "subscribers": [
-          "client:sensu"
-        ],
-        "interval": 1
       },
       "docker": {
         "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p docker",
