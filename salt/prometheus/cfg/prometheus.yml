@@ -48,3 +48,11 @@ scrape_configs:
      static_configs:
       - targets:
         - jenkins:8080
+   - job_name: dhcp
+     scrape_interval: 1s
+     scrape_timeout: 1s
+     metrics_path: /metrics
+     scheme: http
+     static_configs:
+      - targets:
+        - dhcp:9091
