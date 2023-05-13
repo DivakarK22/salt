@@ -3,7 +3,7 @@ base:
   '*':
     - ncdu
     - htop
-  #  - hostname-file
+    - hostname-file
     - repo
     - salt-minion
   #  - cockpit
