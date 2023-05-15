@@ -1,6 +1,7 @@
 base:
 {% if grains['os'] == 'CentOS' %}
   '*':
+    - fstab
     - ncdu
     - htop
     - hostname-file
