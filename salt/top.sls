@@ -6,21 +6,17 @@ base:
     - hostname-file
     - repo
     - salt-minion
-  #  - cockpit
-  #  - ruby
+    - cockpit
     - netstat
-  #  - ntp
-  #  - nfs
+    - ntp
     - sudoers
     - prometheus
     - common.centos
-  #  - sensu.gems
-  #  - sensu.ruby
   'os:(RedHat|CentOS)':
     - match: grain
     - common.centos
   'os:Ubuntu':
-    - common.ubuntu	
+    - common.ubuntu
   'ansible':
     - ansible
     - docker
@@ -32,6 +28,9 @@ base:
     - grafana
   'salt':
     - salt-master
+  'osfamily:GNOME':
+    - match: grain
+    - chrome
 {% else %}
   'windows':
     - hostname-file.windows
