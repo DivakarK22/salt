@@ -12,6 +12,7 @@ sensu
 #worker2
 pxe
 dhcp
+elk
 
 [salt] 
 salt
@@ -46,3 +47,6 @@ pxe
 
 [dhcp]
 dhcp
+
+[elk]
+elk
