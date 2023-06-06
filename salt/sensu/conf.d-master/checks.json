@@ -128,7 +128,7 @@
         "interval": 10
       },
       "check-disk":{
-        "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-disk-usage.rb -w 55 -c 75",
+        "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-disk.rb -l snap -w 65 -c 75",
         "subscribers": [
           "el7"
         ],
