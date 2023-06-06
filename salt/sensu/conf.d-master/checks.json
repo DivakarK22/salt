@@ -30,7 +30,7 @@
          "interval": 10
        },
        "check-process": {
-         "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -c 150",
+         "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -c 180",
          "subscribers": [
            "sensu-master",
            "el7"
