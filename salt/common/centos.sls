@@ -2,6 +2,13 @@
 sensu:
   pkg.installed:
     - pkg: sensu
+sensu_check_copy:
+  file:
+    - recurse
+    - name: /etc/sensu/conf.d/checks
+    - source: salt://sensu/checks
+    - user: root
+    - file_mode: '0755'
 {% else %}
   pkg.installed:
     - pkg: lm_sensors
