@@ -12,7 +12,9 @@ sensu
 #worker2
 pxe
 dhcp
-elk
+elastic
+logstash
+kibana
 
 [salt] 
 salt
@@ -49,4 +51,8 @@ pxe
 dhcp
 
 [elk]
-elk
+elastic
+kibana
+logstash
+
+
