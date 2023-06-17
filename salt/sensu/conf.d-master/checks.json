@@ -134,13 +134,13 @@
         ],
         "interval": 10
       },"named":{
-        "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p vsftpd",
+        "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p named",
         "subscribers": [
           "client:dhcp"
         ],
         "interval": 10
       },"docker":{
-        "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p vsftpd",
+        "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p docker",
         "subscribers": [
           "client:docker",
           "client:k8"
