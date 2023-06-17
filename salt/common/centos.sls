@@ -101,9 +101,9 @@ sensu-client:
     - dataset:
         client:
             safe_mode: false
-            name: {{ grains['id'] }}
-            address: {{ grains['id'] }}
-            subscriptions: [ "{{ grains['id'] }}" , "el7" ]
+            name: {{ grains['id'] }}.root.com
+            address: {{ grains['id'] }}.root.com
+            subscriptions: [ "{{ grains['id'] }}.root.com" , "el7" ]
         socket:
             bind: 127.0.0.1
             port: 3030
@@ -134,9 +134,9 @@ sensu-client:
     - dataset:
         client:
             safe_mode: false
-            name: {{ grains['id'] }}
-            address: {{ grains['id'] }}
-            subscriptions: [ "{{ grains['id'] }}" , "el7" ]
+            name: {{ grains['id'] }}.root.com
+            address: {{ grains['id'] }}.root.com
+            subscriptions: [ "{{ grains['id'] }}.root.com" , "el7" ]
         socket:
             bind: 127.0.0.1
             port: 3030

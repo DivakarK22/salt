@@ -12,7 +12,7 @@ base:
     - sudoers
     - prometheus
     - common.centos
-    - resolve
+ #   - resolve
   'os:(RedHat|CentOS)':
     - match: grain
     - common.centos

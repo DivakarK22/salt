@@ -25,23 +25,23 @@ scrape_configs:
    - job_name: 'cpu_usages'
      static_configs:
 #      - targets: ['ftp:9100']
-      - targets: ['jenkins:9100']
-      - targets: ['sensu:9100']
-      - targets: ['ansible:9100']
-      - targets: ['ftp:9100']
-      - targets: ['salt:9100']
-      - targets: ['grafana:9100']
-#      - targets: ['k8:9100']
-#      - targets: ['docker:9100']
+      - targets: ['jenkins.root.com:9100']
+      - targets: ['sensu.root.com:9100']
+      - targets: ['ansible.root.com:9100']
+      - targets: ['ftp.root.com:9100']
+      - targets: ['salt.root.com:9100']
+      - targets: ['grafana.root.com:9100']
+      - targets: ['k8.root.com:9100']
+      - targets: ['docker.root.com:9100']
 #      - targets: ['windows:9100']
 #      - targets: ['test22:9100']
-#      - targets: ['worker1:9100']
+      - targets: ['worker1.root.com:9100']
 #      - targets: ['worker2:9100']
-      - targets: ['dhcp:9100']
-      - targets: ['pxe:9100']
-      - targets: ['elastic:9100']
-      - targets: ['kibana:9100']
-      - targets: ['logstash:9100']
+      - targets: ['dhcp.root.com:9100']
+      - targets: ['pxe.root.com:9100']
+      - targets: ['elastic.root.com:9100']
+      - targets: ['kibana.root.com:9100']
+      - targets: ['logstash.root.com:9100']
    - job_name: jenkins_info
      scrape_interval: 1s
      scrape_timeout: 1s
@@ -49,7 +49,7 @@ scrape_configs:
      scheme: http
      static_configs:
       - targets:
-        - jenkins:8080
+        - jenkins.root.com:8080
    - job_name: dhcp
      scrape_interval: 1s
      scrape_timeout: 1s
