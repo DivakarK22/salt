@@ -1,58 +1,58 @@
 [all] #deploy in all hosts
-jenkins.root.com
-ftp.root.com
-salt.root.com
-grafana.root.com
-ansible.root.com
-#k8.root.com
-#docker.root.com
-sensu.root.com
-#test22.root.com
-#worker1.root.com
-#worker2.root.com
-pxe.root.com
-dhcp.root.com
-elastic.root.com
-logstash.root.com
-kibana.root.com
+jenkins
+ftp
+salt
+grafana
+ansible
+k8
+docker
+sensu
+#test22
+worker1
+#worker2
+pxe
+dhcp
+elastic
+#logstash
+#kibana
 
 [salt] 
-salt.root.com
+salt
 
 [ftp]
-ftp.root.com
+ftp
 
 [ansible]
-ansible.root.com
+ansible
 
 [sensu]
-sensu.root.com
+sensu
 
 [jenkins]
-jenkins.root.com
+jenkins
 
 [grafana]
-grafana.root.com
+grafana
 
-#[k8-master]
-#k8
+[k8-master]
+k8
 
-#[k8-worker]
-#worker1
+[k8-worker]
+worker1
 #worker2
 
-#[docker]
-#docker
+[docker]
+#ocker
 
 [pxe]
-pxe.root.com
+pxe
 
 [dhcp]
-dhcp.root.com
+dhcp
 
 [elk]
-elastic.root.com
-kibana.root.com
-logstash.root.com
+elastic
+#kibana
+#ogstash
 
 
