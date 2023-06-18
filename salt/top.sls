@@ -18,16 +18,16 @@ base:
     - common.centos
   'os:Ubuntu':
     - common.ubuntu
-  'ansible':
+  'ansible.root.com':
     - ansible
     - docker
-  'docker':
+  'docker.root.com':
    # - docker
     - kubeadm
-  'grafana':
+  'grafana.root.com':
     - prometheus
     - grafana
-  'salt':
+  'salt.root.com':
     - salt-master
   'osfamily:GNOME':
     - match: grain
