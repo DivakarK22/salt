@@ -3,14 +3,14 @@
        "redis": {
          "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p redis",
          "subscribers": [
-           "sensu-master"
+           "sensu-master.root.com"
          ],
          "interval": 10
        },
        "httpd": {
          "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p httpd",
          "subscribers": [
-           "client:ftp"
+           "client:ftp.root.com"
          ],
          "interval": 10
        },
@@ -24,7 +24,7 @@
        "sshd": {
          "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p sshd",
          "subscribers": [
-           "sensu-master",
+           "sensu-master.root.com",
            "el7"
          ],
          "interval": 10
@@ -32,7 +32,7 @@
        "check-process": {
          "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -c 180",
          "subscribers": [
-           "sensu-master",
+           "sensu-master.root.com",
            "el7"
          ],
          "interval": 10
@@ -47,14 +47,14 @@
       "jenkins-http": {
         "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-http.rb -u http://jenkins.root.com:8080 -U devop -a devops",
         "subscribers": [
-          "client:jenkins"
+          "client:jenkins.root.com"
         ],
         "interval": 100
       },
       "grafana-http": {
         "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-http.rb -u http://grafana.root.com:3000 -U admin -a devops",
         "subscribers": [
-          "client:grafana"
+          "client:grafana.root.com"
         ],
         "interval": 100
       },
@@ -68,62 +68,62 @@
       "prometheus": {
         "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p prometheus",
         "subscribers": [
-          "client:grafana"
+          "client:grafana.root.com"
         ],
         "interval": 10
       },
       "py-url-ansible": {
         "command": "sudo python3 /etc/sensu/conf.d/checks/url-check.py http://ansible:9100/metrics",
         "subscribers": [
-          "client:sensu"
+          "client:sensu.root.com"
         ],
         "interval": 1
       },
       "py-url-grafana": {
         "command": "sudo python3 /etc/sensu/conf.d/checks/url-check.py http://grafana:9100/metrics",
         "subscribers": [
-          "client:sensu"
+          "client:sensu.root.com"
         ],
         "interval": 1
       },
       "py-url-jenkins": {
         "command": "sudo python3 /etc/sensu/conf.d/checks/url-check.py http://jenkins:9100/metrics",
         "subscribers": [
-          "client:sensu"
+          "client:sensu.root.com"
         ],
         "interval": 1
       },
       "kubelet": {
         "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p kubelet",
         "subscribers": [
-          "client:k8"
+          "client:k8.root.com"
         ],
         "interval": 10
       },
       "docker": {
         "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p docker",
         "subscribers": [
-          "client:docker",
-          "client:k8",
-          "client:ansible"
+          "client:docker.root.com",
+          "client:k8.root.com",
+          "client:ansible.root.com"
         ],
         "interval": 10
       },"dhcp": {
         "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p dhcp",
         "subscribers": [
-          "client:dhcp"
+          "client:dhcp.root.com"
         ],
         "interval": 10
       },"pxe_xinitd": {
         "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p xinetd",
         "subscribers": [
-          "client:pxe"
+          "client:pxe.root.com"
         ],
         "interval": 10
       },"pxe_vsftpd":{
         "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p vsftpd",
         "subscribers": [
-          "client:pxe"
+          "client:pxe.root.com"
         ],
         "interval": 10
       },
@@ -136,14 +136,7 @@
       },"named":{
         "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p named",
         "subscribers": [
-          "client:dhcp"
-        ],
-        "interval": 10
-      },"docker":{
-        "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p docker",
-        "subscribers": [
-          "client:docker",
-          "client:k8"
+          "client:dhcp.root.com"
         ],
         "interval": 10
       }
