@@ -139,6 +139,24 @@
           "client:dhcp.root.com"
         ],
         "interval": 10
+      },"nfs-idmap":{
+        "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p nfs-idmap",
+        "subscribers": [
+          "client:ftp.root.com"
+        ],
+        "interval": 10
+      },"rpcbind":{
+        "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p rpcbind",
+        "subscribers": [
+          "client:ftp.root.com"
+        ],
+        "interval": 10
+      },"nfs":{
+        "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p nfs",
+        "subscribers": [
+          "client:ftp.root.com"
+        ],
+        "interval": 10
       }
   }
 
