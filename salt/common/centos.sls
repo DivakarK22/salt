@@ -13,7 +13,7 @@ sensu_check_copy:
   pkg.installed:
     - pkg: lm_sensors
 {% endif %}
-{% if grains['id'] == 'k8' %}
+{% if grains['id'] == 'k8.root.com' %}
 kubeadm:
   pkg.installed:
     - pkg: kubeadm
@@ -28,7 +28,7 @@ kubectl:
     - pkg: kubectl
 {% endif %}
 
-{% if grains['id'] == 'ftp' %}
+{% if grains['id'] == 'ftp.root.com' %}
 nfs_master:
   file:
     - recurse
@@ -81,7 +81,7 @@ nfs-idmap:
     - enable: True
 {% endif %}
 
-{% if grains['id'] == 'sensu' %}
+{% if grains['id'] == 'sensu.root.com' %}
 sensu-api:
   service.running:
     - name: sensu-api
@@ -149,7 +149,7 @@ sensu-copy-client:
     - file_mode: '0755'
 {% endif %}
 
-{% if grains['id'] == 'ftp' %}
+{% if grains['id'] == 'ftp.root.com' %}
 httpd:
   pkg.installed:
     - pkg: httpd
