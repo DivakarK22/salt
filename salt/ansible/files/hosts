@@ -16,41 +16,41 @@ elastic
 #logstash
 #kibana
 
-[salt] 
+[salt-master] 
 salt
 
-[ftp]
+[ftp-master]
 ftp
 
-[ansible]
+[ansible-master]
 ansible
 
-[sensu]
+[sensu-master]
 sensu
 
-[jenkins]
+[jenkins-master]
 jenkins
 
-[grafana]
+[grafana-master]
 grafana
 
-[k8-master]
+[k8-master-master]
 k8
 
-[k8-worker]
+[k8-worker-master]
 worker1
 #worker2
 
-[docker]
+[docker-master]
 #ocker
 
-[pxe]
+[pxe-master]
 pxe
 
-[dhcp]
+[dhcp-master]
 dhcp
 
-[elk]
+[elk-master]
 elastic
 #kibana
 #ogstash
