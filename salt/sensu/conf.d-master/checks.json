@@ -151,7 +151,14 @@
           "client:ftp.root.com"
         ],
         "interval": 10
+      },"dhcpd-log":{
+        "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-log.rb  -c 1 -f /var/log/messages -q Failed to start DHCPv4",
+        "subscribers": [
+          "client:dhcp.root.com"
+        ],
+        "interval": 10
       }
+      
   }
 
 }
