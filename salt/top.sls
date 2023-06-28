@@ -12,6 +12,7 @@ base:
     - sudoers
     - prometheus
     - common.centos
+    - metricbeat
  #   - resolve
   'os:(RedHat|CentOS)':
     - match: grain
