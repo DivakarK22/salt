@@ -2,7 +2,8 @@ metricbeat:
   pkg:
     - installed
     - name: metricbeat
-    - running
+  service.running:
+    - name: sensu-server
     - enable: True
   file:
     - recurse
