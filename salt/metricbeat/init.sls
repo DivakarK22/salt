@@ -3,7 +3,7 @@ metricbeat:
     - installed
     - name: metricbeat
   service.running:
-    - name: sensu-server
+    - name: metricbeat
     - enable: True
   file:
     - recurse
