@@ -24,7 +24,7 @@ scrape_configs:
 
    - job_name: 'cpu_usages'
      static_configs:
-#      - targets: ['ftp:9100']
+      - targets: ['ftp:9100']
       - targets: ['jenkins.root.com:9100']
       - targets: ['sensu.root.com:9100']
       - targets: ['ansible.root.com:9100']
@@ -58,3 +58,11 @@ scrape_configs:
      static_configs:
       - targets:
         - dhcp:9091
+   - job_name: elastic
+     scrape_interval: 1s
+     scrape_timeout: 1s
+     metrics_path: /metrics
+     scheme: http
+     static_configs:
+      - targets:
+        - elastic.root.com:9114
