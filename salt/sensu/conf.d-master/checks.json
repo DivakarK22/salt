@@ -157,6 +157,48 @@
           "client:dhcp.root.com"
         ],
         "interval": 10
+      },
+      "node-exporter": {
+        "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p node_exporter",
+        "subscribers": [
+          "el7"
+        ],
+        "interval": 10
+      },
+      "kibana": {
+        "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p kibana",
+        "subscribers": [
+          "client:kibana.root.com"
+        ],
+        "interval": 10
+      },
+      "logstash": {
+        "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p logstash",
+        "subscribers": [
+          "client:logstash.root.com"
+        ],
+        "interval": 10
+      },
+      "elasticsearch": {
+        "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p elasticsearch",
+        "subscribers": [
+          "client:elastic.root.com"
+        ],
+        "interval": 10
+      },
+      "metricbeat": {
+        "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p metricbeat",
+        "subscribers": [
+          "el7"
+        ],
+        "interval": 10
+      },
+      "auditbeat": {
+        "command": "sudo /usr/local/rvm/rubies/ruby-2.7.2/bin/ruby /etc/sensu/conf.d/checks/check-process.rb -p auditbeat",
+        "subscribers": [
+          "el7"
+        ],
+        "interval": 10
       }
       
   }
