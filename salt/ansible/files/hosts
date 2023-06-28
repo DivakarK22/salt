@@ -13,8 +13,8 @@ worker1
 pxe
 dhcp
 elastic
-#logstash
-#kibana
+logstash
+kibana
 
 [salt-master] 
 salt
@@ -52,7 +52,7 @@ dhcp
 
 [elk-master]
 elastic
-#kibana
-#ogstash
+kibana
+logstash
 
 
