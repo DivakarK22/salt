@@ -191,3 +191,4 @@ salt-cloud -p profile_do my-vm-name -l debug  # Provision using profile_do as pr
 salt-cloud -d my-vm-name                      # destroy the my-vm-name virtual machine.
 salt-cloud -u                                 # Update salt-bootstrap to latest develop version on GitHub.
 ```
+salt '*' cmd.run 'ls -l /etc'

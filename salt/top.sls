@@ -13,6 +13,7 @@ base:
     - prometheus
     - common.centos
     - metricbeat
+    - auditbeat
  #   - resolve
   'os:(RedHat|CentOS)':
     - match: grain
