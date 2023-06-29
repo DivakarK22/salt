@@ -16,6 +16,7 @@ base:
     - auditbeat
  #   - resolve
     - collectd
+    - selinux
   'os:(RedHat|CentOS)':
     - match: grain
     - common.centos
