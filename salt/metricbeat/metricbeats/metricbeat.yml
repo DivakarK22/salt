@@ -27,9 +27,9 @@ setup.template.settings:
   #_source.enabled: false
 setup.kibana:
 # Kibana Host ---------------------------- Elasticsearch Output ----------------------------
-output.elasticsearch:
+#output.elasticsearch:
   # Array of hosts to connect to.
-  hosts: ["elastic.root.com:9200"]
+#  hosts: ["elastic.root.com:9200"]
   # Protocol - either `http` (default) or `https`.
   protocol: "http"
 processors:
@@ -37,3 +37,5 @@ processors:
   - add_cloud_metadata: ~
   - add_docker_metadata: ~
   - add_kubernetes_metadata: ~
+output.logstash:
+  hosts: ["logstash.root.com:5044"]

@@ -1,15 +1,4 @@
-##################### Auditbeat Configuration Example #########################
-
-# This is an example configuration file highlighting only the most common
-# options. The auditbeat.reference.yml file from the same directory contains all
-# the supported options with more comments. You can use it as a reference.
-#
-# You can find the full configuration reference here:
-# https://www.elastic.co/guide/en/beats/auditbeat/index.html
-
-# =========================== Modules configuration ============================
 auditbeat.modules:
-
 - module: auditd
   # Load audit rules from separate files. Same format as audit.rules(7).
   audit_rule_files: [ '${path.config}/audit.rules.d/*.conf' ]
@@ -38,7 +27,6 @@ auditbeat.modules:
     ## Unauthorized access attempts.
     #-a always,exit -F arch=b64 -S open,creat,truncate,ftruncate,openat,open_by_handle_at -F exit=-EACCES -k access
     #-a always,exit -F arch=b64 -S open,creat,truncate,ftruncate,openat,open_by_handle_at -F exit=-EPERM -k access
-
 - module: file_integrity
   paths:
   - /bin
@@ -46,13 +34,10 @@ auditbeat.modules:
   - /sbin
   - /usr/sbin
   - /etc
-
 - module: system
   datasets:
     - package # Installed, updated, and removed packages
-
   period: 2m # The frequency at which the datasets check for changes
-
 - module: system
   datasets:
     - host    # General host information, e.g. uptime, IPs
@@ -60,45 +45,16 @@ auditbeat.modules:
     - process # Started and stopped processes
     - socket  # Opened and closed sockets
     - user    # User information
-
-  # How often datasets send state updates with the
-  # current state of the system (e.g. all currently
-  # running processes, all open sockets).
   state.period: 12h
-
-  # Enabled by default. Auditbeat will read password fields in
-  # /etc/passwd and /etc/shadow and store a hash locally to
-  # detect any changes.
   user.detect_password_changes: true
-
-  # File patterns of the login record files.
   login.wtmp_file_pattern: /var/log/wtmp*
   login.btmp_file_pattern: /var/log/btmp*
-
-# ======================= Elasticsearch template setting =======================
 setup.template.settings:
   index.number_of_shards: 1
-
-# =================================== Kibana ===================================
-
-# Starting with Beats version 6.0.0, the dashboards are loaded via the Kibana API.
-# This requires a Kibana endpoint configuration.
-setup.kibana:
-
-  # Kibana Host
-  # Scheme and port can be left out and will be set to the default (http and 5601)
-  # In case you specify and additional path, the scheme is required: http://localhost:5601/path
-  # IPv6 addresses should always be defined as: https://[2001:db8::1]:5601
-  host: "kibana.root.com:5601"
-
-  # Kibana Space ID
-  # ID of the Kibana Space into which the dashboards should be loaded. By default,
-  # the Default Space will be used.
-
-# ---------------------------- Elasticsearch Output ----------------------------
-output.elasticsearch:
-  # Array of hosts to connect to.
-  hosts: ["elastic.root.com:9200"]
+#setup.kibana:
+#  host: "kibana.root.com:5601"
+output.logstash:
+  hosts: ["logstash.root.com:5044"]
 
 processors:
   - add_host_metadata: ~
