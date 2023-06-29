@@ -12,7 +12,7 @@ base:
     - sudoers
     - prometheus
     - common.centos
-    - metricbeat
+ #   - metricbeat
     - auditbeat
  #   - resolve
   'os:(RedHat|CentOS)':
@@ -34,6 +34,8 @@ base:
   'osfamily:GNOME':
     - match: grain
     - chrome
+  'logstash.root.com':
+    - elk.logstash
 {% else %}
   'windows':
     - hostname-file.windows
