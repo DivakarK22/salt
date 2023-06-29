@@ -15,6 +15,7 @@ base:
  #   - metricbeat
     - auditbeat
  #   - resolve
+    - collectd
   'os:(RedHat|CentOS)':
     - match: grain
     - common.centos
